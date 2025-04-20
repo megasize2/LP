@@ -1,16 +1,45 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { CalendarIcon, MapPinIcon } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 
-export function ProfileHeader() {
+interface ProfileHeaderProps {
+  name: string
+  birthDate: string
+  zodiac: string
+  chineseZodiac: string
+  hometown: string
+}
+
+export default function ProfileHeader({ name, birthDate, zodiac, chineseZodiac, hometown }: ProfileHeaderProps) {
   return (
-    <div className="flex flex-col items-center justify-center py-12">
-      <Avatar className="h-32 w-32 mb-4">
-        <AvatarFallback className="text-4xl bg-slate-200">照喜</AvatarFallback>
-      </Avatar>
-      <h1 className="text-3xl font-bold">照喜名 和也</h1>
-      <p className="mt-2 text-lg text-gray-600 max-w-2xl text-center">
-        三方よしの精神を大切にし、お客様に寄り添い・社会貢献に努め・自分自身にとっても培っていけるよう
-        すべてに価値をもたらすことを目指しています。
-      </p>
-    </div>
+    <Card className="overflow-hidden border-none shadow-md">
+      <div className="h-32 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+      <CardContent className="relative pt-0">
+        <div className="flex flex-col md:flex-row gap-6 -mt-12">
+          <div className="flex-shrink-0">
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white dark:border-slate-800 bg-slate-200 dark:bg-slate-700 overflow-hidden shadow-lg">
+              <img src="/images/profile.jpg" alt="プロフィール画像" className="w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div className="flex-1 pt-12 md:pt-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">{name}</h1>
+
+            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mt-2 text-slate-600 dark:text-slate-300">
+              <div className="flex items-center gap-1">
+                <CalendarIcon className="w-4 h-4" />
+                <span>
+                  {birthDate}（{zodiac}・{chineseZodiac}）
+                </span>
+              </div>
+
+              <div className="flex items-center gap-1">
+                <MapPinIcon className="w-4 h-4" />
+                <span>{hometown}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
