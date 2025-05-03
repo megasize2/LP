@@ -54,19 +54,26 @@ export default function HobbiesSection() {
   ]
 
   return (
-    <section id="hobbies" className="py-12 md:py-32 bg-white relative overflow-hidden mobile-dark">
+    <section id="hobbies" className="py-12 md:py-32 bg-black tech-grid-bg relative overflow-hidden mobile-dark">
       {/* 背景装飾 */}
       <div className="absolute inset-0 section-pattern opacity-30"></div>
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-100 dark:bg-blue-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-indigo-100 dark:bg-indigo-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+      {/* デジタルラインの装飾 */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-scanline"></div>
 
       <div className="container mx-auto px-4 md:px-12 relative z-10">
         <ScrollReveal direction="scale">
-          <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16">
-            <span className="block text-sm text-gray-500 dark:text-gray-300 mb-1 md:mb-2 uppercase tracking-wider font-medium">
+          <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16 relative">
+            <span className="block text-sm text-blue-400 mb-1 md:mb-2 uppercase tracking-wider font-medium">
               Interests
             </span>
-            <span className="digital-text text-3xl md:text-5xl">Hobbies & Activities</span>
+            <span className="digital-text text-3xl md:text-5xl">
+              Hobbies & Activities
+              {/* 装飾ライン */}
+              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-blue-500/50"></span>
+            </span>
           </h2>
         </ScrollReveal>
 
@@ -74,9 +81,9 @@ export default function HobbiesSection() {
           {hobbies.map((hobby, index) => (
             <ScrollReveal
               key={index}
-              direction={index % 2 === 0 ? "left" : "right"}
+              direction={index % 3 === 0 ? "left" : index % 3 === 1 ? "scale" : "right"}
               delay={index * 100}
-              className="relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80 hover-lift"
+              className="relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80 hover-lift card-3d"
             >
               {/* 背景画像 */}
               <img
@@ -85,21 +92,35 @@ export default function HobbiesSection() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
 
-              {/* オーバーレイ - 不透明度を上げて可読性向上 */}
+              {/* オーバーレイ - 未来的なグラデーション */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/40"></div>
 
               {/* デジタル装飾 */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600 opacity-70"></div>
 
+              {/* コーナーアクセント */}
+              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-blue-500"></div>
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-blue-500"></div>
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-blue-500"></div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-blue-500"></div>
+
+              {/* スキャンライン */}
+              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent animate-scanline"></div>
+
               {/* コンテンツ */}
               <div className="relative z-10 h-full flex flex-col justify-between p-4 md:p-6 text-white">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-lg animate-pulse-slow">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-blue-400 border border-blue-500/30 shadow-lg animate-pulse-slow">
                   {hobby.icon}
                 </div>
 
                 <div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{hobby.name}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3 highlight-text">{hobby.name}</h3>
                   <p className="text-sm md:text-base text-gray-100 leading-relaxed font-medium">{hobby.description}</p>
+
+                  {/* インタラクティブなボタン */}
+                  <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button className="future-btn text-xs py-1 px-3 rounded-full">詳細を見る</button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

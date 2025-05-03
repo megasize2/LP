@@ -132,10 +132,40 @@
     @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
   }
 
-  /* モバイル用のダークグラスエフェクト - 透明度を下げて可読性向上 */
+  /* モバイル用の未来的なグラスエフェクト */
   @media (max-width: 768px) {
     .glass-effect {
-      @apply bg-gray-900/90 backdrop-blur-md border border-gray-800/50 shadow-lg;
+      @apply bg-gray-900/80 backdrop-blur-md border border-blue-500/30 shadow-lg;
+      box-shadow: 0 4px 20px rgba(0, 123, 255, 0.15), 0 0 0 1px rgba(0, 123, 255, 0.1);
+    }
+  }
+
+  /* 未来的なカードスタイル - モバイル用 */
+  @media (max-width: 768px) {
+    .futuristic-card {
+      @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 border border-blue-500/20;
+      box-shadow: 0 10px 25px -5px rgba(0, 123, 255, 0.2);
+    }
+
+    .futuristic-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.8), transparent);
+      animation: scanline 3s linear infinite;
+    }
+
+    .futuristic-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.4), transparent);
     }
   }
 
@@ -147,12 +177,13 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500 font-medium;
   }
 
-  /* モバイル用のデジタルテキスト - 白に統一 */
+  /* モバイル用のデジタルテキスト */
   @media (max-width: 768px) {
     .digital-text {
       @apply text-white font-semibold;
       background-image: none;
       -webkit-text-fill-color: white;
+      text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
     }
   }
 
@@ -160,14 +191,27 @@
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
   }
 
+  /* モバイル用のホバーエフェクト強化 */
+  @media (max-width: 768px) {
+    .hover-lift {
+      @apply transition-all duration-300;
+    }
+
+    .hover-lift:active {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 123, 255, 0.3);
+    }
+  }
+
   .card-digital {
     @apply rounded-xl overflow-hidden bg-white border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300;
   }
 
-  /* モバイル用のダークカード - 背景色を濃くして可読性向上 */
+  /* モバイル用のダークカード - 未来的なスタイル */
   @media (max-width: 768px) {
     .card-digital {
-      @apply rounded-xl overflow-hidden bg-gray-900 border border-gray-800 shadow-md hover:shadow-xl transition-all duration-300;
+      @apply rounded-xl overflow-hidden bg-gray-900 border border-blue-500/20 shadow-md hover:shadow-xl transition-all duration-300;
+      box-shadow: 0 4px 20px rgba(0, 123, 255, 0.15);
     }
   }
 
@@ -175,10 +219,30 @@
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
-  /* モバイル用のダークパターン - パターンの不透明度を下げて可読性向上 */
+  /* モバイル用の未来的なパターン背景 */
   @media (max-width: 768px) {
     .section-pattern {
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%230066FF' stroke-opacity='0.05' stroke-width='0.5'%3E%3Cpath d='M0 0 L60 60 M60 0 L0 60 M30 0 L30 60 M0 30 L60 30'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .tech-grid-bg {
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230066FF' stroke-opacity='0.03' stroke-width='0.5'%3E%3Cpath d='M0,0 L100,0 L100,100 L0,100 Z' /%3E%3Cpath d='M25,0 L25,100 M50,0 L50,100 M75,0 L75,100 M0,25 L100,25 M0,50 L100,50 M0,75 L100,75' /%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .circuit-bg {
+      position: relative;
+    }
+
+    .circuit-bg::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230066FF' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M10,10 L30,10 L30,30 L50,30 L50,50 M50,50 L70,50 L70,70 L90,70 M30,50 L10,50 L10,70 M70,30 L90,30 L90,10' /%3E%3Ccircle cx='10' cy='10' r='2' fill='%230066FF' fill-opacity='0.1' /%3E%3Ccircle cx='50' cy='50' r='2' fill='%230066FF' fill-opacity='0.1' /%3E%3Ccircle cx='90' cy='10' r='2' fill='%230066FF' fill-opacity='0.1' /%3E%3Ccircle cx='10' cy='70' r='2' fill='%230066FF' fill-opacity='0.1' /%3E%3Ccircle cx='90' cy='70' r='2' fill='%230066FF' fill-opacity='0.1' /%3E%3C/g%3E%3C/svg%3E");
+      z-index: -1;
+      opacity: 0.5;
     }
   }
 
@@ -239,6 +303,84 @@
 
     a {
       @apply text-white hover:text-white/80;
+    }
+  }
+
+  /* 未来的なボタンスタイル - モバイル用 */
+  @media (max-width: 768px) {
+    .future-btn {
+      @apply relative overflow-hidden bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-2 rounded-md;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3), 0 0 0 1px rgba(0, 123, 255, 0.1);
+    }
+
+    .future-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .future-btn:active::before {
+      left: 100%;
+    }
+  }
+
+  /* 未来的なセクション区切り - モバイル用 */
+  @media (max-width: 768px) {
+    .future-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.5), transparent);
+      margin: 2rem 0;
+    }
+  }
+
+  /* ハイライト効果 - モバイル用 */
+  @media (max-width: 768px) {
+    .highlight-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlight-text::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.8), transparent);
+    }
+  }
+
+  /* データ表示スタイル - モバイル用 */
+  @media (max-width: 768px) {
+    .data-display {
+      @apply relative p-3 rounded-lg bg-gray-900 border border-blue-500/20;
+      box-shadow: inset 0 0 10px rgba(0, 123, 255, 0.1);
+    }
+
+    .data-display::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+      height: 1px;
+      background-color: rgba(0, 123, 255, 0.5);
+    }
+
+    .data-display::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      height: 1px;
+      background-color: rgba(0, 123, 255, 0.5);
     }
   }
 }
@@ -312,6 +454,71 @@
   }
 }
 
+/* 新しいアニメーション */
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+    transform: translate(-2px, 2px);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+    transform: translate(1px, -3px);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+    transform: translate(-1px, 3px);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+    transform: translate(3px, 1px);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+    transform: translate(-3px, -2px);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+    transform: translate(2px, 3px);
+  }
+}
+
+@keyframes dataFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-out forwards;
 }
@@ -334,6 +541,28 @@
 
 .animate-float {
   animation: float 6s infinite ease-in-out;
+}
+
+.animate-scanline {
+  animation: scanline 3s linear infinite;
+}
+
+.animate-glitch {
+  animation: glitch 1s infinite linear alternate-reverse;
+}
+
+.animate-dataFlow {
+  animation: dataFlow 3s infinite linear;
+  background: linear-gradient(90deg, rgba(0, 123, 255, 0), rgba(0, 123, 255, 0.3), rgba(0, 123, 255, 0));
+  background-size: 200% 100%;
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+.animate-rotate3d {
+  animation: rotate3d 15s infinite linear;
 }
 
 .animate-delay-100 {
@@ -395,4 +624,57 @@
 .reveal-scale.active {
   opacity: 1;
   transform: scale(1);
+}
+
+/* 新しいスクロールアニメーション */
+.reveal-rotate {
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: all 0.8s ease;
+}
+
+.reveal-rotate.active {
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+.reveal-flip {
+  opacity: 0;
+  transform: perspective(800px) rotateX(90deg);
+  transition: all 0.8s ease;
+}
+
+.reveal-flip.active {
+  opacity: 1;
+  transform: perspective(800px) rotateX(0);
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(1.2);
+  filter: blur(10px);
+  transition: all 0.8s ease;
+}
+
+.reveal-zoom.active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* モバイル用の3Dカードエフェクト */
+@media (max-width: 768px) {
+  .card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-3d-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d:hover .card-3d-inner {
+    transform: rotateY(10deg);
+  }
 }

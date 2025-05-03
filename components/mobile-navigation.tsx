@@ -5,11 +5,21 @@ import { HomeIcon, UserIcon, BriefcaseIcon, AwardIcon, HeartIcon, MailIcon } fro
 
 export default function MobileNavigation() {
   const [activeSection, setActiveSection] = useState("")
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[id]")
       const scrollPosition = window.scrollY + 100
+
+      // スクロール方向に基づいてナビゲーションの表示/非表示を制御
+      if (scrollPosition > lastScrollY + 50) {
+        setIsVisible(false)
+      } else if (scrollPosition < lastScrollY - 10) {
+        setIsVisible(true)
+      }
+      setLastScrollY(scrollPosition)
 
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop
@@ -28,7 +38,7 @@ export default function MobileNavigation() {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [lastScrollY])
 
   const navItems = [
     { id: "hero", icon: <HomeIcon className="w-5 h-5" />, label: "TOP" },
@@ -40,21 +50,48 @@ export default function MobileNavigation() {
   ]
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-      <div className="glass-effect border-t border-gray-800/30 shadow-lg">
-        <div className="flex justify-around items-center py-2">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={`flex flex-col items-center justify-center px-2 py-1 ${
-                activeSection === item.id ? "text-white" : "text-white/70 hover:text-white"
-              }`}
-            >
-              <div className={`p-1 rounded-full ${activeSection === item.id ? "bg-blue-900/50" : ""}`}>{item.icon}</div>
-              <span className="text-xs mt-1 font-medium">{item.label}</span>
-            </a>
-          ))}
+    <div
+      className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <div className="bg-black/80 backdrop-blur-lg border-t border-blue-500/30 shadow-lg">
+        <div className="relative">
+          {/* 装飾的なスキャンライン */}
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent animate-scanline"></div>
+
+          <div className="flex justify-around items-center py-3">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`flex flex-col items-center justify-center px-2 py-1 relative ${
+                  activeSection === item.id ? "text-white" : "text-white/70 hover:text-white"
+                }`}
+              >
+                <div
+                  className={`p-2 rounded-full transition-all duration-300 ${
+                    activeSection === item.id
+                      ? "bg-gradient-to-r from-blue-600/30 to-blue-400/30 shadow-[0_0_10px_rgba(0,123,255,0.5)]"
+                      : ""
+                  }`}
+                >
+                  {item.icon}
+
+                  {/* アクティブ時のパルスエフェクト */}
+                  {activeSection === item.id && (
+                    <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping"></span>
+                  )}
+                </div>
+                <span className="text-xs mt-1 font-medium">{item.label}</span>
+
+                {/* アクティブインジケーター */}
+                {activeSection === item.id && (
+                  <span className="absolute -bottom-1 w-1 h-1 bg-blue-500 rounded-full"></span>
+                )}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>
