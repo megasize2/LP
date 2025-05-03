@@ -1,4 +1,5 @@
 import { BrainCircuitIcon } from "lucide-react"
+import ScrollReveal from "./scroll-reveal"
 
 export default function ContactSection() {
   // 仕事用AIリスト
@@ -30,17 +31,21 @@ export default function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-12 md:py-32 bg-white relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-32 bg-white relative overflow-hidden mobile-dark">
       {/* 背景装飾 */}
       <div className="absolute inset-0 section-pattern opacity-30"></div>
-      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-100 dark:bg-blue-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-indigo-100 dark:bg-indigo-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
 
       <div className="container mx-auto px-4 md:px-12 relative z-10">
-        <h2 className="text-2xl md:text-4xl font-light text-center mb-8 md:mb-16 animate-fadeIn">
-          <span className="block text-sm text-gray-500 mb-1 md:mb-2 uppercase tracking-wider">Interests</span>
-          <span className="digital-text text-3xl md:text-5xl">Current Trends</span>
-        </h2>
+        <ScrollReveal direction="scale">
+          <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16">
+            <span className="block text-sm text-gray-500 dark:text-gray-300 mb-1 md:mb-2 uppercase tracking-wider font-medium">
+              Interests
+            </span>
+            <span className="digital-text text-3xl md:text-5xl">Current Trends</span>
+          </h2>
+        </ScrollReveal>
 
         <div className="max-w-5xl mx-auto glass-effect p-5 md:p-12 rounded-xl shadow-lg animate-fadeIn">
           <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start mb-8 md:mb-12">
@@ -52,12 +57,12 @@ export default function ContactSection() {
 
             <div className="md:w-3/4">
               <h3 className="text-xl md:text-2xl font-medium mb-3 md:mb-4 digital-text">生成AI</h3>
-              <p className="text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
+              <p className="text-gray-700 dark:text-gray-100 leading-relaxed mb-4 md:mb-6 mobile-readable">
                 最近のトレンドは生成AIです。情報を得るのが大変で常に頭を動かしています。最新技術の動向に敏感で、特に生成AIの可能性と活用方法に強い関心を持っています。
               </p>
 
-              <div className="bg-white/50 backdrop-blur-sm p-4 md:p-6 rounded-lg mb-4 md:mb-6 border border-gray-100">
-                <p className="text-gray-600 italic text-sm md:text-base">
+              <div className="bg-white/50 dark:bg-gray-800/70 backdrop-blur-sm p-4 md:p-6 rounded-lg mb-4 md:mb-6 border border-gray-100 dark:border-gray-700">
+                <p className="text-gray-600 dark:text-gray-200 italic mobile-readable">
                   "今年生成AI関連に支払ったサブスク合計が5万円を突破。流石に懐事情でChatGPT
                   Proは契約できておらず毎月給料日に迷っています。"
                 </p>
@@ -67,7 +72,7 @@ export default function ContactSection() {
                 {["生成AI", "テクノロジー", "イノベーション", "自己啓発"].map((tag, index) => (
                   <span
                     key={index}
-                    className="px-2 md:px-3 py-1 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 text-blue-700 rounded-full text-xs md:text-sm hover-lift"
+                    className="px-2 md:px-3 py-1 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-500/30 dark:to-indigo-500/30 text-blue-700 dark:text-blue-300 rounded-full text-xs md:text-sm hover-lift font-medium"
                   >
                     {tag}
                   </span>
@@ -77,15 +82,15 @@ export default function ContactSection() {
           </div>
 
           <div className="mt-8 animate-fadeIn animate-delay-200">
-            <h4 className="text-lg md:text-xl font-medium mb-4 md:mb-6 pb-2 border-b border-gray-200 digital-text">
+            <h4 className="text-lg md:text-xl font-medium mb-4 md:mb-6 pb-2 border-b border-gray-200 dark:border-gray-700 digital-text">
               実際使用したAIのオススメ+使用熟練度
             </h4>
-            <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-200 mb-4 md:mb-6 mobile-readable">
               ★が多いほどオススメかつ私自身の使用練度が高い意味を示しています。
             </p>
 
             <div className="mb-6 md:mb-10">
-              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 p-2 rounded-lg">
+              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-500/30 dark:to-indigo-500/30 p-2 rounded-lg">
                 仕事使用可能
               </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
@@ -96,20 +101,22 @@ export default function ContactSection() {
                         href={tool.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-blue-600 hover:text-blue-800 hover:underline text-sm md:text-base"
+                        className="font-medium text-blue-600 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-200 hover:underline mobile-readable"
                       >
                         {tool.name}
                       </a>
-                      <span className="text-yellow-500 text-xs md:text-sm">{tool.rating}</span>
+                      <span className="text-yellow-500 dark:text-yellow-300 text-sm md:text-base font-bold">
+                        {tool.rating}
+                      </span>
                     </div>
-                    <p className="text-gray-600 text-xs md:text-sm mt-1">{tool.description}</p>
+                    <p className="text-gray-600 dark:text-gray-200 mobile-readable mt-1">{tool.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="animate-fadeIn animate-delay-300">
-              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-2 rounded-lg">
+              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 dark:from-indigo-500/30 dark:to-purple-500/30 p-2 rounded-lg">
                 個人的趣味で使用可能
               </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
@@ -120,13 +127,15 @@ export default function ContactSection() {
                         href={tool.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-indigo-600 hover:text-indigo-800 hover:underline text-sm md:text-base"
+                        className="font-medium text-indigo-600 dark:text-indigo-300 hover:text-indigo-800 dark:hover:text-indigo-200 hover:underline mobile-readable"
                       >
                         {tool.name}
                       </a>
-                      <span className="text-yellow-500 text-xs md:text-sm">{tool.rating}</span>
+                      <span className="text-yellow-500 dark:text-yellow-300 text-sm md:text-base font-bold">
+                        {tool.rating}
+                      </span>
                     </div>
-                    <p className="text-gray-600 text-xs md:text-sm mt-1">{tool.description}</p>
+                    <p className="text-gray-600 dark:text-gray-200 mobile-readable mt-1">{tool.description}</p>
                   </div>
                 ))}
               </div>

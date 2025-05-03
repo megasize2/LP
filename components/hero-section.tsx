@@ -41,13 +41,13 @@ export default function HeroSection() {
               <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-12 h-12 md:w-20 md:h-20 bg-blue-50 dark:bg-blue-900/30 rounded-full opacity-50 animate-float"></div>
 
               <div className="relative z-10">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-light mb-4 md:mb-6">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl mobile-heading mb-4 md:mb-6">
                   <span className="block">國吉 泰史</span>
                   <span className="block text-lg md:text-2xl digital-text mt-1 md:mt-2 animate-pulse-slow">
                     YASUFUMI KUNIYOSHI
                   </span>
                 </h1>
-                <p className="text-base md:text-xl font-light leading-relaxed text-gray-600 dark:text-gray-300 max-w-lg">
+                <p className="mobile-readable-light text-base md:text-xl leading-relaxed max-w-lg">
                   つくるものを通して人とのつながり
                   <br />
                   新しい価値が生まれ、気持ちや想いが届く。

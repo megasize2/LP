@@ -62,8 +62,8 @@ export default function HobbiesSection() {
 
       <div className="container mx-auto px-4 md:px-12 relative z-10">
         <ScrollReveal direction="scale">
-          <h2 className="text-2xl md:text-4xl font-light text-center mb-8 md:mb-16">
-            <span className="block text-sm text-gray-500 dark:text-gray-400 mb-1 md:mb-2 uppercase tracking-wider">
+          <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16">
+            <span className="block text-sm text-gray-500 dark:text-gray-300 mb-1 md:mb-2 uppercase tracking-wider font-medium">
               Interests
             </span>
             <span className="digital-text text-3xl md:text-5xl">Hobbies & Activities</span>
@@ -85,8 +85,8 @@ export default function HobbiesSection() {
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
 
-              {/* オーバーレイ */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/20"></div>
+              {/* オーバーレイ - 不透明度を上げて可読性向上 */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/40"></div>
 
               {/* デジタル装飾 */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600 opacity-70"></div>
@@ -98,8 +98,8 @@ export default function HobbiesSection() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg md:text-xl font-medium mb-2 md:mb-3">{hobby.name}</h3>
-                  <p className="text-xs md:text-sm text-gray-200 leading-relaxed">{hobby.description}</p>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{hobby.name}</h3>
+                  <p className="text-sm md:text-base text-gray-100 leading-relaxed font-medium">{hobby.description}</p>
                 </div>
               </div>
             </ScrollReveal>

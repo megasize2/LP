@@ -11,8 +11,8 @@ export default function SkillsSection() {
 
       <div className="container mx-auto px-4 md:px-12 relative z-10">
         <ScrollReveal direction="scale">
-          <h2 className="text-2xl md:text-4xl font-light text-center mb-8 md:mb-16">
-            <span className="block text-sm text-gray-500 dark:text-gray-400 mb-1 md:mb-2 uppercase tracking-wider">
+          <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16">
+            <span className="block text-sm text-gray-500 dark:text-gray-300 mb-1 md:mb-2 uppercase tracking-wider font-medium">
               Qualifications
             </span>
             <span className="digital-text text-3xl md:text-5xl">Skills & Certifications</span>
@@ -27,11 +27,11 @@ export default function SkillsSection() {
                 <BadgeCheckIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
               <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4">資格</h3>
-              <ul className="space-y-2 md:space-y-3 text-sm md:text-base">
+              <ul className="space-y-3 md:space-y-4">
                 {["AIパスポート（取得学習中）", "普通運転免許", "情報処理士", "1級船舶免許"].map((item, index) => (
                   <li key={index} className="flex items-center group">
                     <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    <span className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <span className="group-hover:text-blue-400 dark:group-hover:text-blue-300 transition-colors mobile-readable">
                       {item}
                     </span>
                   </li>
@@ -60,11 +60,11 @@ export default function SkillsSection() {
                 </svg>
               </div>
               <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4">営業スキル</h3>
-              <ul className="space-y-2 md:space-y-3 text-sm md:text-base">
+              <ul className="space-y-3 md:space-y-4">
                 {["BtoB営業（9年）", "BtoC営業（3年）", "顧客関係構築", "ニーズ分析"].map((item, index) => (
                   <li key={index} className="flex items-center group">
                     <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    <span className="group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    <span className="group-hover:text-indigo-400 dark:group-hover:text-indigo-300 transition-colors mobile-readable">
                       {item}
                     </span>
                   </li>
@@ -93,11 +93,11 @@ export default function SkillsSection() {
                 </svg>
               </div>
               <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4">テクノロジー</h3>
-              <ul className="space-y-2 md:space-y-3 text-sm md:text-base">
+              <ul className="space-y-3 md:space-y-4">
                 {["生成AI活用", "パソコン操作", "YouTube制作"].map((item, index) => (
                   <li key={index} className="flex items-center group">
                     <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    <span className="group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                    <span className="group-hover:text-purple-400 dark:group-hover:text-purple-300 transition-colors mobile-readable">
                       {item}
                     </span>
                   </li>
