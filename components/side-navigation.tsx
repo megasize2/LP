@@ -41,7 +41,7 @@ export default function SideNavigation() {
 
   return (
     <div className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
-      <div className="bg-white/80 backdrop-blur-sm shadow-md rounded-full py-4 px-2">
+      <div className="glass-effect py-4 px-2 rounded-full">
         <ul className="space-y-6">
           {navItems.map((item) => (
             <li key={item.id}>
@@ -52,11 +52,15 @@ export default function SideNavigation() {
                 }`}
               >
                 <div
-                  className={`p-2 rounded-full ${activeSection === item.id ? "bg-blue-50" : "group-hover:bg-gray-100"}`}
+                  className={`p-2 rounded-full transition-all duration-300 ${
+                    activeSection === item.id
+                      ? "bg-gradient-to-r from-blue-500/20 to-indigo-500/20"
+                      : "group-hover:bg-gray-100"
+                  }`}
                 >
                   {item.icon}
                 </div>
-                <span className="absolute right-full mr-2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                <span className="absolute right-full mr-2 glass-effect text-gray-800 text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   {item.label}
                 </span>
               </a>

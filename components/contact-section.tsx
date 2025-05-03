@@ -30,28 +30,33 @@ export default function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-12 md:py-32">
-      <div className="container mx-auto px-4 md:px-12">
-        <h2 className="text-2xl md:text-4xl font-light text-center mb-8 md:mb-16">
+    <section id="contact" className="py-12 md:py-32 bg-white relative overflow-hidden">
+      {/* 背景装飾 */}
+      <div className="absolute inset-0 section-pattern opacity-30"></div>
+      <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-1/4 right-1/3 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+      <div className="container mx-auto px-4 md:px-12 relative z-10">
+        <h2 className="text-2xl md:text-4xl font-light text-center mb-8 md:mb-16 animate-fadeIn">
           <span className="block text-sm text-gray-500 mb-1 md:mb-2 uppercase tracking-wider">Interests</span>
-          Current Trends
+          <span className="digital-text text-3xl md:text-5xl">Current Trends</span>
         </h2>
 
-        <div className="max-w-5xl mx-auto bg-white p-5 md:p-12 rounded-lg shadow-sm">
+        <div className="max-w-5xl mx-auto glass-effect p-5 md:p-12 rounded-xl shadow-lg animate-fadeIn">
           <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start mb-8 md:mb-12">
             <div className="md:w-1/4 flex justify-center">
-              <div className="w-16 h-16 md:w-24 md:h-24 bg-blue-50 rounded-full flex items-center justify-center text-blue-500">
+              <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg">
                 <BrainCircuitIcon className="w-8 h-8 md:w-12 md:h-12" />
               </div>
             </div>
 
             <div className="md:w-3/4">
-              <h3 className="text-xl md:text-2xl font-medium mb-3 md:mb-4">生成AI</h3>
+              <h3 className="text-xl md:text-2xl font-medium mb-3 md:mb-4 digital-text">生成AI</h3>
               <p className="text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
                 最近のトレンドは生成AIです。情報を得るのが大変で常に頭を動かしています。最新技術の動向に敏感で、特に生成AIの可能性と活用方法に強い関心を持っています。
               </p>
 
-              <div className="bg-gray-50 p-4 md:p-6 rounded-lg mb-4 md:mb-6">
+              <div className="bg-white/50 backdrop-blur-sm p-4 md:p-6 rounded-lg mb-4 md:mb-6 border border-gray-100">
                 <p className="text-gray-600 italic text-sm md:text-base">
                   "今年生成AI関連に支払ったサブスク合計が5万円を突破。流石に懐事情でChatGPT
                   Proは契約できておらず毎月給料日に迷っています。"
@@ -59,24 +64,20 @@ export default function ContactSection() {
               </div>
 
               <div className="flex flex-wrap gap-2 md:gap-3">
-                <span className="px-2 md:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs md:text-sm">
-                  生成AI
-                </span>
-                <span className="px-2 md:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs md:text-sm">
-                  テクノロジー
-                </span>
-                <span className="px-2 md:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs md:text-sm">
-                  イノベーション
-                </span>
-                <span className="px-2 md:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs md:text-sm">
-                  自己啓発
-                </span>
+                {["生成AI", "テクノロジー", "イノベーション", "自己啓発"].map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-2 md:px-3 py-1 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 text-blue-700 rounded-full text-xs md:text-sm hover-lift"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="mt-8">
-            <h4 className="text-lg md:text-xl font-medium mb-4 md:mb-6 pb-2 border-b border-gray-200">
+          <div className="mt-8 animate-fadeIn animate-delay-200">
+            <h4 className="text-lg md:text-xl font-medium mb-4 md:mb-6 pb-2 border-b border-gray-200 digital-text">
               実際使用したAIのオススメ+使用熟練度
             </h4>
             <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
@@ -84,10 +85,12 @@ export default function ContactSection() {
             </p>
 
             <div className="mb-6 md:mb-10">
-              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-blue-50 p-2 rounded">仕事使用可能</h5>
+              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 p-2 rounded-lg">
+                仕事使用可能
+              </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {workAiTools.map((tool, index) => (
-                  <div key={index} className="bg-gray-50 p-3 md:p-4 rounded-lg">
+                  <div key={index} className="glass-effect p-3 md:p-4 rounded-lg hover-lift">
                     <div className="flex justify-between items-start">
                       <a
                         href={tool.url}
@@ -105,19 +108,19 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div>
-              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-blue-50 p-2 rounded">
+            <div className="animate-fadeIn animate-delay-300">
+              <h5 className="text-base md:text-lg font-medium mb-3 md:mb-4 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-2 rounded-lg">
                 個人的趣味で使用可能
               </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {personalAiTools.map((tool, index) => (
-                  <div key={index} className="bg-gray-50 p-3 md:p-4 rounded-lg">
+                  <div key={index} className="glass-effect p-3 md:p-4 rounded-lg hover-lift">
                     <div className="flex justify-between items-start">
                       <a
                         href={tool.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-blue-600 hover:text-blue-800 hover:underline text-sm md:text-base"
+                        className="font-medium text-indigo-600 hover:text-indigo-800 hover:underline text-sm md:text-base"
                       >
                         {tool.name}
                       </a>

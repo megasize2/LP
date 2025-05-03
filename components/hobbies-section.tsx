@@ -1,4 +1,5 @@
 import { ComputerIcon, YoutubeIcon, TentIcon, FishIcon, PlaneIcon } from "lucide-react"
+import ScrollReveal from "./scroll-reveal"
 
 export default function HobbiesSection() {
   const hobbies = [
@@ -53,29 +54,46 @@ export default function HobbiesSection() {
   ]
 
   return (
-    <section id="hobbies" className="py-12 md:py-32 bg-white">
-      <div className="container mx-auto px-4 md:px-12">
-        <h2 className="text-2xl md:text-4xl font-light text-center mb-8 md:mb-16">
-          <span className="block text-sm text-gray-500 mb-1 md:mb-2 uppercase tracking-wider">Interests</span>
-          Hobbies & Activities
-        </h2>
+    <section id="hobbies" className="py-12 md:py-32 bg-white relative overflow-hidden mobile-dark">
+      {/* 背景装飾 */}
+      <div className="absolute inset-0 section-pattern opacity-30"></div>
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-100 dark:bg-blue-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-indigo-100 dark:bg-indigo-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+
+      <div className="container mx-auto px-4 md:px-12 relative z-10">
+        <ScrollReveal direction="scale">
+          <h2 className="text-2xl md:text-4xl font-light text-center mb-8 md:mb-16">
+            <span className="block text-sm text-gray-500 dark:text-gray-400 mb-1 md:mb-2 uppercase tracking-wider">
+              Interests
+            </span>
+            <span className="digital-text text-3xl md:text-5xl">Hobbies & Activities</span>
+          </h2>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {hobbies.map((hobby, index) => (
-            <div key={index} className="relative overflow-hidden rounded-lg shadow-sm h-64 md:h-96">
+            <ScrollReveal
+              key={index}
+              direction={index % 2 === 0 ? "left" : "right"}
+              delay={index * 100}
+              className="relative overflow-hidden rounded-xl shadow-lg h-64 md:h-80 hover-lift"
+            >
               {/* 背景画像 */}
               <img
                 src={hobby.imagePath || "/placeholder.svg"}
                 alt={hobby.name}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
 
               {/* オーバーレイ */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/40"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/20"></div>
+
+              {/* デジタル装飾 */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-600 opacity-70"></div>
 
               {/* コンテンツ */}
               <div className="relative z-10 h-full flex flex-col justify-between p-4 md:p-6 text-white">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20 shadow-lg animate-pulse-slow">
                   {hobby.icon}
                 </div>
 
@@ -84,7 +102,7 @@ export default function HobbiesSection() {
                   <p className="text-xs md:text-sm text-gray-200 leading-relaxed">{hobby.description}</p>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

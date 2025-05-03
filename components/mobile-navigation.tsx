@@ -40,20 +40,22 @@ export default function MobileNavigation() {
   ]
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white shadow-lg border-t border-gray-200">
-      <div className="flex justify-around items-center py-2">
-        {navItems.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            className={`flex flex-col items-center justify-center px-2 py-1 ${
-              activeSection === item.id ? "text-blue-500" : "text-gray-500"
-            }`}
-          >
-            {item.icon}
-            <span className="text-xs mt-1">{item.label}</span>
-          </a>
-        ))}
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+      <div className="glass-effect border-t border-gray-800/30 shadow-lg">
+        <div className="flex justify-around items-center py-2">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`flex flex-col items-center justify-center px-2 py-1 ${
+                activeSection === item.id ? "text-blue-400" : "text-gray-400 hover:text-blue-300"
+              }`}
+            >
+              <div className={`p-1 rounded-full ${activeSection === item.id ? "bg-blue-900/30" : ""}`}>{item.icon}</div>
+              <span className="text-xs mt-1">{item.label}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   )
