@@ -48,7 +48,7 @@ export default function MobileNavigation() {
               key={item.id}
               href={`#${item.id}`}
               className={`flex flex-col items-center justify-center px-2 py-1 ${
-                activeSection === item.id ? "text-blue-300" : "text-gray-300 hover:text-blue-200"
+                activeSection === item.id ? "text-white" : "text-white/70 hover:text-white"
               }`}
             >
               <div className={`p-1 rounded-full ${activeSection === item.id ? "bg-blue-900/50" : ""}`}>{item.icon}</div>

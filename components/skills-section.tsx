@@ -12,7 +12,7 @@ export default function SkillsSection() {
       <div className="container mx-auto px-4 md:px-12 relative z-10">
         <ScrollReveal direction="scale">
           <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16">
-            <span className="block text-sm text-gray-500 dark:text-gray-300 mb-1 md:mb-2 uppercase tracking-wider font-medium">
+            <span className="block text-sm text-gray-500 dark:text-white mb-1 md:mb-2 uppercase tracking-wider font-medium">
               Qualifications
             </span>
             <span className="digital-text text-3xl md:text-5xl">Skills & Certifications</span>
@@ -31,9 +31,7 @@ export default function SkillsSection() {
                 {["AIパスポート（取得学習中）", "普通運転免許", "情報処理士", "1級船舶免許"].map((item, index) => (
                   <li key={index} className="flex items-center group">
                     <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    <span className="group-hover:text-blue-400 dark:group-hover:text-blue-300 transition-colors mobile-readable">
-                      {item}
-                    </span>
+                    <span className="group-hover:text-white transition-colors mobile-readable">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -64,9 +62,7 @@ export default function SkillsSection() {
                 {["BtoB営業（9年）", "BtoC営業（3年）", "顧客関係構築", "ニーズ分析"].map((item, index) => (
                   <li key={index} className="flex items-center group">
                     <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    <span className="group-hover:text-indigo-400 dark:group-hover:text-indigo-300 transition-colors mobile-readable">
-                      {item}
-                    </span>
+                    <span className="group-hover:text-white transition-colors mobile-readable">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -97,9 +93,7 @@ export default function SkillsSection() {
                 {["生成AI活用", "パソコン操作", "YouTube制作"].map((item, index) => (
                   <li key={index} className="flex items-center group">
                     <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    <span className="group-hover:text-purple-400 dark:group-hover:text-purple-300 transition-colors mobile-readable">
-                      {item}
-                    </span>
+                    <span className="group-hover:text-white transition-colors mobile-readable">{item}</span>
                   </li>
                 ))}
               </ul>

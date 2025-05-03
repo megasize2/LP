@@ -12,7 +12,7 @@ export default function ExperienceSection() {
       <div className="container mx-auto px-4 md:px-12 relative z-10">
         <ScrollReveal direction="scale">
           <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16">
-            <span className="block text-sm text-gray-500 dark:text-gray-300 mb-1 md:mb-2 uppercase tracking-wider font-medium">
+            <span className="block text-sm text-gray-500 dark:text-white mb-1 md:mb-2 uppercase tracking-wider font-medium">
               Career
             </span>
             <span className="digital-text text-3xl md:text-5xl">Work Experience</span>
@@ -31,11 +31,11 @@ export default function ExperienceSection() {
                 <BuildingIcon className="w-5 h-5 mr-2 text-blue-500" />
                 <h3 className="text-lg md:text-xl font-medium">株式会社tetra Core</h3>
               </div>
-              <p className="text-gray-500 dark:text-gray-300 mb-4 text-sm md:text-base font-medium">現在</p>
+              <p className="text-white mb-4 text-sm md:text-base font-medium">現在</p>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="glass-effect p-3 md:p-6 rounded-xl">
-                  <p className="text-gray-700 dark:text-gray-100 leading-relaxed mobile-readable">
+                  <p className="text-white leading-relaxed mobile-readable">
                     株式会社tetra
                     Coreでは、最新のテクノロジーを活用したソリューション開発に携わっています。特に生成AIの活用に力を入れ、革新的なサービス提供を目指しています。
                   </p>
@@ -63,9 +63,7 @@ export default function ExperienceSection() {
                 <BriefcaseIcon className="w-5 h-5 mr-2 text-indigo-500" />
                 <h3 className="text-lg md:text-xl font-medium">オフィス機器販売営業</h3>
               </div>
-              <p className="text-gray-500 dark:text-gray-300 mb-2 md:mb-4 text-sm md:text-base font-medium">
-                9年間（BtoB）
-              </p>
+              <p className="text-white mb-2 md:mb-4 text-sm md:text-base font-medium">9年間（BtoB）</p>
 
               <div className="grid md:grid-cols-2 gap-3 md:gap-6">
                 <div className="rounded-xl overflow-hidden shadow-md h-40 md:h-64 md:order-1 order-2 hover-lift">
@@ -77,7 +75,7 @@ export default function ExperienceSection() {
                 </div>
 
                 <div className="glass-effect p-3 md:p-6 rounded-xl md:order-2 order-1">
-                  <p className="text-gray-700 dark:text-gray-100 leading-relaxed mobile-readable">
+                  <p className="text-white leading-relaxed mobile-readable">
                     法人向けオフィス機器の販売営業として9年間勤務。クライアントのニーズを理解し、最適なソリューションを提案することで、長期的な信頼関係を構築。
                   </p>
                 </div>
@@ -96,13 +94,11 @@ export default function ExperienceSection() {
                 <BriefcaseIcon className="w-5 h-5 mr-2 text-purple-500" />
                 <h3 className="text-lg md:text-xl font-medium">家電量販店 販売営業</h3>
               </div>
-              <p className="text-gray-500 dark:text-gray-300 mb-2 md:mb-4 text-sm md:text-base font-medium">
-                3年間（BtoC）
-              </p>
+              <p className="text-white mb-2 md:mb-4 text-sm md:text-base font-medium">3年間（BtoC）</p>
 
               <div className="grid md:grid-cols-2 gap-3 md:gap-6">
                 <div className="glass-effect p-3 md:p-6 rounded-xl">
-                  <p className="text-gray-700 dark:text-gray-100 leading-relaxed mobile-readable">
+                  <p className="text-white leading-relaxed mobile-readable">
                     家電量販店で個人顧客向け（BtoC）の販売営業として3年間勤務。多様な顧客ニーズに対応し、適切な商品提案と丁寧な説明を心がけました。
                   </p>
                 </div>

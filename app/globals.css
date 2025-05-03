@@ -80,6 +80,21 @@
     body {
       @apply bg-black text-white;
     }
+
+    /* モバイルでのすべてのテキスト要素を白に統一 */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    span,
+    div,
+    li,
+    a {
+      @apply text-white;
+    }
   }
 
   /* モバイル向けの基本フォントサイズと行間の調整 */
@@ -132,10 +147,12 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500 font-medium;
   }
 
-  /* モバイル用のダークデジタルテキスト - より明るい色で可読性向上 */
+  /* モバイル用のデジタルテキスト - 白に統一 */
   @media (max-width: 768px) {
     .digital-text {
-      @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-indigo-200 font-semibold;
+      @apply text-white font-semibold;
+      background-image: none;
+      -webkit-text-fill-color: white;
     }
   }
 
@@ -179,7 +196,7 @@
 
   @media (max-width: 768px) {
     .mobile-readable {
-      @apply text-base leading-relaxed font-medium;
+      @apply text-base leading-relaxed font-medium text-white;
     }
   }
 
@@ -189,7 +206,7 @@
 
   @media (max-width: 768px) {
     .mobile-readable-light {
-      @apply text-gray-200 leading-relaxed;
+      @apply text-white leading-relaxed;
     }
   }
 
@@ -199,7 +216,7 @@
 
   @media (max-width: 768px) {
     .mobile-heading {
-      @apply font-medium;
+      @apply font-medium text-white;
     }
   }
 
@@ -211,6 +228,17 @@
   @media (max-width: 768px) {
     .text-bg-contrast {
       @apply bg-black/70 px-2 py-1 rounded;
+    }
+  }
+
+  /* モバイル向けのリンク色を白に統一 */
+  @media (max-width: 768px) {
+    .mobile-link-white {
+      @apply text-white hover:text-white/80;
+    }
+
+    a {
+      @apply text-white hover:text-white/80;
     }
   }
 }

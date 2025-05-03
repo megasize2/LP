@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <ScrollReveal direction="left" className="mb-4 md:mb-0">
             <h2 className="text-lg md:text-xl font-medium tracking-wider digital-text">KUNIYOSHI</h2>
-            <p className="text-gray-400 mt-1 md:mt-2 text-sm md:text-base">國吉泰史のプロフィールサイト</p>
+            <p className="text-white mt-1 md:mt-2 text-sm md:text-base">國吉泰史のプロフィールサイト</p>
           </ScrollReveal>
 
           <ScrollReveal direction="right" className="flex items-center mb-4 md:mb-0">
@@ -23,13 +23,13 @@ export default function Footer() {
                 className="h-8 md:h-10 bg-white p-1 rounded"
               />
             </div>
-            <span className="text-sm md:text-base text-gray-300">株式会社tetra Core</span>
+            <span className="text-sm md:text-base text-white">株式会社tetra Core</span>
           </ScrollReveal>
         </div>
 
         <ScrollReveal
           direction="up"
-          className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-500 text-xs md:text-sm"
+          className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-white text-xs md:text-sm"
         >
           <p>&copy; {new Date().getFullYear()} 國吉泰史. All rights reserved.</p>
         </ScrollReveal>

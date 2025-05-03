@@ -40,7 +40,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4 md:px-12 relative z-10">
         <ScrollReveal direction="scale">
           <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16">
-            <span className="block text-sm text-gray-500 dark:text-gray-300 mb-1 md:mb-2 uppercase tracking-wider font-medium">
+            <span className="block text-sm text-gray-500 dark:text-white mb-1 md:mb-2 uppercase tracking-wider font-medium">
               Interests
             </span>
             <span className="digital-text text-3xl md:text-5xl">Current Trends</span>
@@ -57,12 +57,12 @@ export default function ContactSection() {
 
             <div className="md:w-3/4">
               <h3 className="text-xl md:text-2xl font-medium mb-3 md:mb-4 digital-text">生成AI</h3>
-              <p className="text-gray-700 dark:text-gray-100 leading-relaxed mb-4 md:mb-6 mobile-readable">
+              <p className="text-white leading-relaxed mb-4 md:mb-6 mobile-readable">
                 最近のトレンドは生成AIです。情報を得るのが大変で常に頭を動かしています。最新技術の動向に敏感で、特に生成AIの可能性と活用方法に強い関心を持っています。
               </p>
 
               <div className="bg-white/50 dark:bg-gray-800/70 backdrop-blur-sm p-4 md:p-6 rounded-lg mb-4 md:mb-6 border border-gray-100 dark:border-gray-700">
-                <p className="text-gray-600 dark:text-gray-200 italic mobile-readable">
+                <p className="text-white italic mobile-readable">
                   "今年生成AI関連に支払ったサブスク合計が5万円を突破。流石に懐事情でChatGPT
                   Proは契約できておらず毎月給料日に迷っています。"
                 </p>
@@ -72,7 +72,7 @@ export default function ContactSection() {
                 {["生成AI", "テクノロジー", "イノベーション", "自己啓発"].map((tag, index) => (
                   <span
                     key={index}
-                    className="px-2 md:px-3 py-1 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-500/30 dark:to-indigo-500/30 text-blue-700 dark:text-blue-300 rounded-full text-xs md:text-sm hover-lift font-medium"
+                    className="px-2 md:px-3 py-1 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-500/30 dark:to-indigo-500/30 text-white rounded-full text-xs md:text-sm hover-lift font-medium"
                   >
                     {tag}
                   </span>
@@ -85,7 +85,7 @@ export default function ContactSection() {
             <h4 className="text-lg md:text-xl font-medium mb-4 md:mb-6 pb-2 border-b border-gray-200 dark:border-gray-700 digital-text">
               実際使用したAIのオススメ+使用熟練度
             </h4>
-            <p className="text-gray-600 dark:text-gray-200 mb-4 md:mb-6 mobile-readable">
+            <p className="text-white mb-4 md:mb-6 mobile-readable">
               ★が多いほどオススメかつ私自身の使用練度が高い意味を示しています。
             </p>
 
@@ -101,15 +101,13 @@ export default function ContactSection() {
                         href={tool.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-blue-600 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-200 hover:underline mobile-readable"
+                        className="font-medium text-white hover:text-white/80 mobile-link-white mobile-readable"
                       >
                         {tool.name}
                       </a>
-                      <span className="text-yellow-500 dark:text-yellow-300 text-sm md:text-base font-bold">
-                        {tool.rating}
-                      </span>
+                      <span className="text-yellow-300 text-sm md:text-base font-bold">{tool.rating}</span>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-200 mobile-readable mt-1">{tool.description}</p>
+                    <p className="text-white mobile-readable mt-1">{tool.description}</p>
                   </div>
                 ))}
               </div>
@@ -127,15 +125,13 @@ export default function ContactSection() {
                         href={tool.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-indigo-600 dark:text-indigo-300 hover:text-indigo-800 dark:hover:text-indigo-200 hover:underline mobile-readable"
+                        className="font-medium text-white hover:text-white/80 mobile-link-white mobile-readable"
                       >
                         {tool.name}
                       </a>
-                      <span className="text-yellow-500 dark:text-yellow-300 text-sm md:text-base font-bold">
-                        {tool.rating}
-                      </span>
+                      <span className="text-yellow-300 text-sm md:text-base font-bold">{tool.rating}</span>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-200 mobile-readable mt-1">{tool.description}</p>
+                    <p className="text-white mobile-readable mt-1">{tool.description}</p>
                   </div>
                 ))}
               </div>
