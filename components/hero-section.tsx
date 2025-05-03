@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="pt-20 pb-12 md:pt-32 md:pb-20 bg-black section-pattern relative overflow-hidden mobile-dark section-overlay"
+      className="pt-16 pb-8 md:pt-32 md:pb-20 bg-black section-pattern relative overflow-hidden mobile-dark section-overlay min-h-[90vh] md:min-h-0 flex items-center"
     >
       {/* 未来的な装飾要素 - 透明度を下げる */}
       <div className="absolute top-0 left-0 w-full h-full tech-grid-bg opacity-15"></div>
@@ -21,10 +21,10 @@ export default function HeroSection() {
         style={{ animationDelay: "1.5s" }}
       ></div>
 
-      <div className="container mx-auto px-4 md:px-12 relative z-10">
+      <div className="container mx-auto px-4 md:px-12 relative z-10 w-full">
         <div className="flex flex-col md:flex-row items-center">
-          <ScrollReveal direction="left" className="md:w-1/2 mb-8 md:mb-0 md:pr-8 md:pr-12">
-            <div className="relative card-3d">
+          <ScrollReveal direction="left" className="md:w-1/2 mb-6 md:mb-0 md:pr-8 md:pr-12 w-full">
+            <div className="relative card-3d max-w-[280px] mx-auto md:max-w-none">
               {/* 装飾的な要素 */}
               <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-12 h-12 md:w-20 md:h-20 border-t-2 border-l-2 border-blue-500 opacity-70 animate-pulse-slow"></div>
               <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-12 h-12 md:w-20 md:h-20 border-b-2 border-r-2 border-blue-500 opacity-70 animate-pulse-slow"></div>
@@ -55,22 +55,27 @@ export default function HeroSection() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal direction="right" className="md:w-1/2">
+          <ScrollReveal direction="right" className="md:w-1/2 w-full">
             <div className="relative text-container important-section">
               {/* 装飾的な円 */}
               <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-12 h-12 md:w-20 md:h-20 bg-blue-500/10 rounded-full opacity-50 animate-float"></div>
 
               <div className="relative z-10">
-                <h1 className="text-2xl md:text-4xl lg:text-5xl mobile-heading mb-4 md:mb-6 relative">
-                  <span className="block relative bg-black/50 py-2 px-4 rounded-lg shadow-md inline-block">
-                    <span className="relative z-10 text-gray-100" style={{ textShadow: "0 0 5px rgba(0, 0, 0, 0.5)" }}>
+                <h1 className="text-2xl md:text-4xl lg:text-5xl mobile-heading mb-4 md:mb-6 relative text-center md:text-left">
+                  <span className="block relative bg-black/70 py-2 px-4 rounded-lg shadow-md inline-block">
+                    <span
+                      className="relative z-10 text-white font-medium"
+                      style={{ textShadow: "0 0 5px rgba(0, 0, 0, 0.8)" }}
+                    >
                       國吉 泰史
                     </span>
-                    {/* グリッチエフェクト - 控えめに */}
+                    {/* グリッチエフェクトは控えめに */}
                     <span
-                      className="absolute top-0 left-0 w-full text-blue-300/20 animate-glitch-subtle"
+                      className="absolute top-0 left-0 w-full text-blue-300/10 animate-glitch"
                       style={{
-                        textShadow: "1px 0 #3a86ff40, -1px 0 #3a86ff40, 0 0 4px rgba(0, 123, 255, 0.3)",
+                        textShadow: "1px 0 #3a86ff20, -1px 0 #3a86ff20",
+                        opacity: "0.2",
+                        filter: "brightness(0.8) contrast(0.9)",
                       }}
                       aria-hidden="true"
                     >
@@ -78,8 +83,8 @@ export default function HeroSection() {
                     </span>
                   </span>
                   <span
-                    className="block text-lg md:text-xl digital-text mt-3 md:mt-4 animate-pulse-slow relative section-title bg-black/50 py-1 px-4 rounded-lg shadow-md inline-block"
-                    style={{ textShadow: "0 0 8px rgba(59, 130, 246, 0.5), 0 1px 3px rgba(0, 0, 0, 0.7)" }}
+                    className="block text-lg md:text-xl digital-text mt-3 md:mt-4 animate-pulse-slow relative section-title bg-black/70 py-1 px-4 rounded-lg shadow-md inline-block"
+                    style={{ textShadow: "0 0 8px rgba(59, 130, 246, 0.5), 0 1px 3px rgba(0, 0, 0, 0.9)" }}
                   >
                     YASUFUMI KUNIYOSHI
                     <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-500/40"></span>
@@ -87,7 +92,7 @@ export default function HeroSection() {
                 </h1>
 
                 <p
-                  className="mobile-readable-light text-base md:text-xl leading-relaxed max-w-lg bg-black/60 p-3 rounded-lg shadow-lg mt-4 font-medium text-white"
+                  className="mobile-readable-light text-base md:text-xl leading-relaxed max-w-lg bg-black/80 p-3 rounded-lg shadow-lg mt-4 font-medium text-white mx-auto md:mx-0 text-center md:text-left"
                   style={{ textShadow: "0 0 10px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9)" }}
                 >
                   つくるものを通して人とのつながり
@@ -98,10 +103,10 @@ export default function HeroSection() {
                 </p>
 
                 {/* デジタル装飾線 */}
-                <div className="mt-6 h-1 w-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse-slow"></div>
+                <div className="mt-6 h-1 w-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full animate-pulse-slow mx-auto md:mx-0"></div>
 
                 {/* スクロールダウンインジケーター */}
-                <div className="mt-8 flex items-center gap-2 text-sm text-blue-400 animate-pulse-slow">
+                <div className="mt-8 flex items-center gap-2 text-sm text-blue-400 animate-pulse-slow justify-center md:justify-start">
                   <span className="inline-block w-5 h-5 border-b-2 border-r-2 border-blue-400 transform rotate-45"></span>
                   <span
                     className="bg-black/60 px-2 py-1 rounded text-white"
