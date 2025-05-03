@@ -55,10 +55,10 @@ export default function MobileNavigation() {
         isVisible ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="bg-black/80 backdrop-blur-lg border-t border-blue-500/30 shadow-lg">
+      <div className="bg-black/90 backdrop-blur-lg border-t border-blue-500/50 shadow-lg">
         <div className="relative">
           {/* 装飾的なスキャンライン */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent animate-scanline"></div>
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent animate-scanline"></div>
 
           <div className="flex justify-around items-center py-3">
             {navItems.map((item) => (
@@ -66,13 +66,13 @@ export default function MobileNavigation() {
                 key={item.id}
                 href={`#${item.id}`}
                 className={`flex flex-col items-center justify-center px-2 py-1 relative ${
-                  activeSection === item.id ? "text-white" : "text-white/70 hover:text-white"
+                  activeSection === item.id ? "text-blue-300" : "text-white/80 hover:text-blue-300"
                 }`}
               >
                 <div
                   className={`p-2 rounded-full transition-all duration-300 ${
                     activeSection === item.id
-                      ? "bg-gradient-to-r from-blue-600/30 to-blue-400/30 shadow-[0_0_10px_rgba(0,123,255,0.5)]"
+                      ? "bg-gradient-to-r from-blue-600/40 to-blue-400/40 shadow-[0_0_10px_rgba(0,123,255,0.7)]"
                       : ""
                   }`}
                 >
@@ -80,14 +80,14 @@ export default function MobileNavigation() {
 
                   {/* アクティブ時のパルスエフェクト */}
                   {activeSection === item.id && (
-                    <span className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping"></span>
+                    <span className="absolute inset-0 rounded-full bg-blue-500/30 animate-ping"></span>
                   )}
                 </div>
-                <span className="text-xs mt-1 font-medium">{item.label}</span>
+                <span className="text-xs mt-1 font-medium text-outline">{item.label}</span>
 
                 {/* アクティブインジケーター */}
                 {activeSection === item.id && (
-                  <span className="absolute -bottom-1 w-1 h-1 bg-blue-500 rounded-full"></span>
+                  <span className="absolute -bottom-1 w-1 h-1 bg-blue-500 rounded-full shadow-[0_0_5px_rgba(0,123,255,0.7)]"></span>
                 )}
               </a>
             ))}

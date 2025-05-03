@@ -30,7 +30,7 @@ export default function HeroSection() {
               <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 w-12 h-12 md:w-20 md:h-20 border-b-2 border-r-2 border-blue-500 opacity-70 animate-pulse-slow"></div>
 
               {/* 画像コンテナ */}
-              <div className="card-3d-inner relative z-10 bg-gray-900 p-2 rounded-lg shadow-lg overflow-hidden border border-blue-500/30">
+              <div className="card-3d-inner relative z-10 bg-gray-900 p-2 rounded-lg shadow-lg overflow-hidden border border-blue-500/50">
                 {/* スキャンライン効果 */}
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent animate-scanline"></div>
 
@@ -56,12 +56,12 @@ export default function HeroSection() {
           </ScrollReveal>
 
           <ScrollReveal direction="right" className="md:w-1/2">
-            <div className="relative">
+            <div className="relative text-container important-section">
               {/* 装飾的な円 */}
               <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-12 h-12 md:w-20 md:h-20 bg-blue-500/10 rounded-full opacity-50 animate-float"></div>
 
               <div className="relative z-10">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl mobile-heading mb-4 md:mb-6 relative">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl mobile-heading mb-4 md:mb-6 relative text-outline">
                   <span className="block relative">
                     國吉 泰史
                     {/* グリッチエフェクト */}
@@ -69,12 +69,12 @@ export default function HeroSection() {
                       國吉 泰史
                     </span>
                   </span>
-                  <span className="block text-lg md:text-2xl digital-text mt-1 md:mt-2 animate-pulse-slow relative">
+                  <span className="block text-lg md:text-2xl digital-text mt-1 md:mt-2 animate-pulse-slow relative section-title">
                     YASUFUMI KUNIYOSHI
                     <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-blue-500/50"></span>
                   </span>
                 </h1>
-                <p className="mobile-readable-light text-base md:text-xl leading-relaxed max-w-lg">
+                <p className="mobile-readable-light text-base md:text-xl leading-relaxed max-w-lg text-outline">
                   つくるものを通して人とのつながり
                   <br />
                   新しい価値が生まれ、気持ちや想いが届く。
@@ -88,7 +88,7 @@ export default function HeroSection() {
                 {/* スクロールダウンインジケーター */}
                 <div className="mt-8 flex items-center gap-2 text-sm text-blue-400 animate-pulse-slow">
                   <span className="inline-block w-5 h-5 border-b-2 border-r-2 border-blue-400 transform rotate-45"></span>
-                  <span>スクロールして詳細を見る</span>
+                  <span className="text-outline">スクロールして詳細を見る</span>
                 </div>
               </div>
             </div>

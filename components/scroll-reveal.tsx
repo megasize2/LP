@@ -9,7 +9,7 @@ interface ScrollRevealProps {
   className?: string
   threshold?: number
   delay?: number
-  direction?: "up" | "down" | "left" | "right" | "scale"
+  direction?: "up" | "down" | "left" | "right" | "scale" | "flip" | "rotate" | "zoom"
 }
 
 export default function ScrollReveal({
@@ -57,6 +57,12 @@ export default function ScrollReveal({
         return "reveal-right"
       case "scale":
         return "reveal-scale"
+      case "flip":
+        return "reveal-flip"
+      case "rotate":
+        return "reveal-rotate"
+      case "zoom":
+        return "reveal-zoom"
       default:
         return "reveal"
     }
