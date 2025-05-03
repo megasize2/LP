@@ -17,11 +17,7 @@ export default function Footer() {
 
           <ScrollReveal direction="right" className="flex items-center mb-4 md:mb-0">
             <div className="p-1 rounded-lg mr-3 relative">
-              <img
-                src="/images/tetra-core-logo.png"
-                alt="株式会社tetra Core"
-                className="h-8 md:h-10 bg-white p-1 rounded"
-              />
+              <img src="/images/company-logo.png" alt="TETRA CORE" className="h-6 md:h-8 bg-white p-1 rounded" />
             </div>
             <span className="text-sm md:text-base text-white">株式会社tetra Core</span>
           </ScrollReveal>

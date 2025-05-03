@@ -23,19 +23,13 @@ export default function Navbar() {
         isScrolled ? "glass-effect py-2 md:py-3" : "bg-transparent py-3 md:py-6",
       )}
     >
-      <div className="container mx-auto px-4 md:px-12 flex justify-between items-center">
-        <div className="flex items-center">
-          <a href="#" className="flex items-center">
-            <img
-              src="/images/tetra-core-logo.png"
-              alt="tetra Core"
-              className="h-12 md:h-16 w-96 md:w-[32rem] mr-2 object-contain"
-            />
-          </a>
-        </div>
+      <div className="container mx-auto px-0 md:px-0 flex justify-between items-center">
+        <a href="#" className="flex items-center pl-2 md:pl-4">
+          <img src="/images/company-logo.png" alt="TETRA CORE" className="h-8 md:h-10 object-contain" />
+        </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 md:space-x-10">
+        <nav className="hidden md:flex items-center space-x-6 md:space-x-10 pr-4">
           {["ABOUT", "SKILLS", "EXPERIENCE", "HOBBIES", "CONTACT"].map((item, index) => (
             <a
               key={item}
@@ -52,7 +46,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-800 dark:text-gray-200 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm"
+          className="md:hidden text-gray-800 dark:text-gray-200 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm mr-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <XIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
