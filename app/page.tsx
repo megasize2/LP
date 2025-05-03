@@ -36,7 +36,7 @@ export default function ProfilePage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 pb-16 md:pb-0 mobile-dark">
+    <div className="min-h-screen bg-white text-gray-800 pb-24 md:pb-0 mobile-dark">
       <Navbar />
       <SideNavigation />
       <MobileNavigation />

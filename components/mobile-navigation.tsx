@@ -5,21 +5,11 @@ import { HomeIcon, UserIcon, BriefcaseIcon, AwardIcon, HeartIcon, MailIcon } fro
 
 export default function MobileNavigation() {
   const [activeSection, setActiveSection] = useState("")
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[id]")
       const scrollPosition = window.scrollY + 100
-
-      // スクロール方向に基づいてナビゲーションの表示/非表示を制御
-      if (scrollPosition > lastScrollY + 50) {
-        setIsVisible(false)
-      } else if (scrollPosition < lastScrollY - 10) {
-        setIsVisible(true)
-      }
-      setLastScrollY(scrollPosition)
 
       sections.forEach((section) => {
         const sectionTop = (section as HTMLElement).offsetTop
@@ -38,7 +28,7 @@ export default function MobileNavigation() {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [lastScrollY])
+  }, [])
 
   const navItems = [
     { id: "hero", icon: <HomeIcon className="w-5 h-5" />, label: "TOP" },
@@ -50,15 +40,11 @@ export default function MobileNavigation() {
   ]
 
   return (
-    <div
-      className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-transform duration-300 ${
-        isVisible ? "translate-y-0" : "translate-y-full"
-      }`}
-    >
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       <div className="bg-black/90 backdrop-blur-lg border-t border-blue-500/50 shadow-lg">
         <div className="relative">
           {/* 装飾的なスキャンライン */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent animate-scanline"></div>
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/70 to-transparent"></div>
 
           <div className="flex justify-around items-center py-3">
             {navItems.map((item) => (
