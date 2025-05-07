@@ -13,8 +13,31 @@ import SideNavigation from "@/components/side-navigation"
 import MobileNavigation from "@/components/mobile-navigation"
 
 export default function ProfilePage() {
-  // スクロールアニメーションの初期化
+  // パーティクル効果の初期化
   useEffect(() => {
+    // パーティクルの生成
+    const createParticles = () => {
+      const particles = document.querySelectorAll(".particles")
+
+      particles.forEach((container) => {
+        for (let i = 0; i < 30; i++) {
+          const particle = document.createElement("div")
+          particle.classList.add("particle")
+
+          // ランダムな位置と遅延を設定
+          particle.style.left = `${Math.random() * 100}%`
+          particle.style.top = `${Math.random() * 100}%`
+          particle.style.animationDuration = `${15 + Math.random() * 10}s`
+          particle.style.animationDelay = `${Math.random() * 5}s`
+
+          container.appendChild(particle)
+        }
+      })
+    }
+
+    createParticles()
+
+    // スクロールアニメーションの初期化
     const handleScroll = () => {
       const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale")
 
@@ -36,7 +59,7 @@ export default function ProfilePage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 pb-24 md:pb-0 mobile-dark">
+    <div className="min-h-screen cyber-bg text-white pb-24 md:pb-0">
       <Navbar />
       <SideNavigation />
       <MobileNavigation />

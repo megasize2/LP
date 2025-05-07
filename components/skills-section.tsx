@@ -2,98 +2,99 @@ import { BadgeCheckIcon } from "lucide-react"
 import ScrollReveal from "./scroll-reveal"
 
 export default function SkillsSection() {
+  const skills = [
+    {
+      category: "資格",
+      items: ["AIパスポート（取得学習中）", "普通運転免許", "情報処理士", "1級船舶免許"],
+      color: "cyan",
+    },
+    {
+      category: "営業スキル",
+      items: ["BtoB営業（9年）", "BtoC営業（3年）", "顧客関係構築", "ニーズ分析"],
+      color: "pink",
+    },
+    {
+      category: "テクノロジー",
+      items: ["生成AI活用", "パソコン操作", "YouTube制作"],
+      color: "purple",
+    },
+  ]
+
   return (
-    <section id="skills" className="py-12 md:py-32 bg-black relative overflow-hidden mobile-dark section-overlay">
-      <div className="container mx-auto px-4 md:px-12 relative z-10">
+    <section id="skills" className="py-20 cyber-bg relative overflow-hidden">
+      {/* スキャナーライン */}
+      <div className="scanner-line"></div>
+
+      {/* バイオモーフィック形状 */}
+      <div className="bio-shape bio-shape-1" style={{ top: "30%", right: "10%" }}></div>
+      <div className="bio-shape bio-shape-2" style={{ bottom: "20%", left: "5%" }}></div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal direction="scale">
-          <h2 className="text-2xl md:text-4xl mobile-heading text-center mb-8 md:mb-16 relative">
-            <span className="block text-sm text-blue-300 mb-1 md:mb-2 uppercase tracking-wider font-medium bg-black/60 py-1 px-3 rounded-lg inline-block">
-              Qualifications
-            </span>
-            <span className="digital-text text-3xl md:text-5xl relative section-title block mt-2">
-              <span className="bg-black/70 py-2 px-4 rounded-lg inline-block">Skills & Certifications</span>
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            <span className="neon-text">SKILLS</span>
+            <span className="block text-sm text-cyan-400 mt-2">& CERTIFICATIONS</span>
           </h2>
         </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-          {/* 資格カード */}
-          <ScrollReveal direction="flip" delay={100}>
-            <div className="important-section p-5 md:p-8 rounded-xl">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-md relative">
-                <BadgeCheckIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 important-text">資格</h3>
-              <ul className="space-y-3 md:space-y-4">
-                {["AIパスポート（取得学習中）", "普通運転免許", "情報処理士", "1級船舶免許"].map((item, index) => (
-                  <li key={index} className="flex items-center group p-2 rounded-md">
-                    <span className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mr-3"></span>
-                    <span className="mobile-readable">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </ScrollReveal>
-
-          {/* 営業スキルカード */}
-          <ScrollReveal direction="flip" delay={200}>
-            <div className="important-section p-5 md:p-8 rounded-xl">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-md relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 md:w-8 md:h-8 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {skills.map((skillGroup, index) => (
+            <ScrollReveal key={index} direction="flip" delay={index * 100}>
+              <div className="cyber-card p-6 h-full">
+                <div
+                  className={`w-16 h-16 rounded-full bg-${skillGroup.color}-500/20 flex items-center justify-center mb-6 mx-auto`}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 important-text">営業スキル</h3>
-              <ul className="space-y-3 md:space-y-4">
-                {["BtoB営業（9年）", "BtoC営業（3年）", "顧客関係構築", "ニーズ分析"].map((item, index) => (
-                  <li key={index} className="flex items-center group p-2 rounded-md">
-                    <span className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mr-3"></span>
-                    <span className="mobile-readable">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </ScrollReveal>
+                  <BadgeCheckIcon className={`w-8 h-8 text-${skillGroup.color}-500`} />
+                </div>
 
-          {/* テクノロジーカード */}
-          <ScrollReveal direction="flip" delay={300}>
-            <div className="important-section p-5 md:p-8 rounded-xl">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mb-4 md:mb-6 shadow-md relative">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 md:w-8 md:h-8 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+                <h3 className="text-xl font-bold text-center mb-6 neon-text">{skillGroup.category}</h3>
+
+                <ul className="space-y-4">
+                  {skillGroup.items.map((item, i) => (
+                    <li key={i} className="flex items-center group transition-all duration-300 hover:translate-x-2">
+                      <span className={`w-2 h-2 bg-${skillGroup.color}-500 rounded-full mr-3`}></span>
+                      <span className="text-gray-300 group-hover:text-white">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* 装飾的なコーナー */}
+                <div
+                  className={`absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-${skillGroup.color}-500`}
+                ></div>
+                <div
+                  className={`absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-${skillGroup.color}-500`}
+                ></div>
               </div>
-              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 important-text">テクノロジー</h3>
-              <ul className="space-y-3 md:space-y-4">
-                {["生成AI活用", "パソコン操作", "YouTube制作"].map((item, index) => (
-                  <li key={index} className="flex items-center group p-2 rounded-md">
-                    <span className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></span>
-                    <span className="mobile-readable">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* スキルメーター */}
+        <div className="mt-20">
+          <ScrollReveal>
+            <h3 className="text-2xl font-bold text-center mb-10 neon-text-pink">スキルレベル</h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {[
+                { name: "営業力", level: 90, color: "cyan" },
+                { name: "コミュニケーション", level: 85, color: "pink" },
+                { name: "AI活用", level: 75, color: "purple" },
+                { name: "問題解決能力", level: 80, color: "cyan" },
+              ].map((skill, i) => (
+                <div key={i} className="cyber-card p-4">
+                  <div className="flex justify-between mb-2">
+                    <span className="text-gray-300">{skill.name}</span>
+                    <span className={`text-${skill.color}-400`}>{skill.level}%</span>
+                  </div>
+                  <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                    <div
+                      className={`h-full bg-gradient-to-r from-${skill.color}-600 to-${skill.color}-400`}
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </ScrollReveal>
         </div>
