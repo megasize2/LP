@@ -41,10 +41,10 @@ export default function MobileNavigation() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-      <div className="cyber-bg border-t border-cyan-500/50 shadow-lg">
+      <div className="society-bg border-t border-[#0ff]/50 shadow-lg">
         <div className="relative">
           {/* スキャナーライン */}
-          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#0ff] to-transparent"></div>
 
           <div className="flex justify-around items-center py-3">
             {navItems.map((item) => (
@@ -52,13 +52,13 @@ export default function MobileNavigation() {
                 key={item.id}
                 href={`#${item.id}`}
                 className={`flex flex-col items-center justify-center px-2 py-1 relative ${
-                  activeSection === item.id ? "text-cyan-400" : "text-gray-400 hover:text-cyan-400"
+                  activeSection === item.id ? "text-[#0ff]" : "text-gray-400 hover:text-[#0ff]"
                 }`}
               >
                 <div
                   className={`p-2 rounded-full transition-all duration-300 ${
                     activeSection === item.id
-                      ? "bg-gradient-to-r from-cyan-500/20 to-cyan-400/10 shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+                      ? "bg-gradient-to-r from-[#0ff]/20 to-[#0ff]/10 shadow-[0_0_10px_rgba(0,255,255,0.3)]"
                       : ""
                   }`}
                 >
@@ -66,14 +66,14 @@ export default function MobileNavigation() {
 
                   {/* アクティブ時のパルスエフェクト */}
                   {activeSection === item.id && (
-                    <span className="absolute inset-0 rounded-full bg-cyan-500/20 animate-ping"></span>
+                    <span className="absolute inset-0 rounded-full bg-[#0ff]/20 animate-ping"></span>
                   )}
                 </div>
                 <span className="text-xs mt-1 font-medium">{item.label}</span>
 
                 {/* アクティブインジケーター */}
                 {activeSection === item.id && (
-                  <span className="absolute -bottom-1 w-1 h-1 bg-cyan-500 rounded-full shadow-[0_0_5px_rgba(0,255,255,0.7)]"></span>
+                  <span className="absolute -bottom-1 w-1 h-1 bg-[#0ff] rounded-full shadow-[0_0_5px_rgba(0,255,255,0.7)]"></span>
                 )}
               </a>
             ))}

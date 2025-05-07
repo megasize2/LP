@@ -37,6 +37,31 @@ export default function ProfilePage() {
 
     createParticles()
 
+    // 円周上のドットの生成
+    const createCircleDots = () => {
+      const circleDots = document.querySelectorAll(".circle-dots")
+
+      circleDots.forEach((container) => {
+        for (let i = 0; i < 12; i++) {
+          const dot = document.createElement("div")
+          dot.classList.add("circle-dot")
+
+          // 円周上の位置を計算
+          const angle = (i * 30 * Math.PI) / 180
+          const x = 50 + 48 * Math.cos(angle)
+          const y = 50 + 48 * Math.sin(angle)
+
+          dot.style.left = `${x}%`
+          dot.style.top = `${y}%`
+          dot.style.animationDelay = `${i * 0.2}s`
+
+          container.appendChild(dot)
+        }
+      })
+    }
+
+    createCircleDots()
+
     // スクロールアニメーションの初期化
     const handleScroll = () => {
       const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale")
@@ -59,7 +84,7 @@ export default function ProfilePage() {
   }, [])
 
   return (
-    <div className="min-h-screen cyber-bg text-white pb-24 md:pb-0">
+    <div className="min-h-screen society-bg text-white pb-24 md:pb-0">
       <Navbar />
       <SideNavigation />
       <MobileNavigation />

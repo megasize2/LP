@@ -20,7 +20,7 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "cyber-bg py-2" : "bg-transparent py-3 md:py-6",
+        isScrolled ? "society-bg py-2" : "bg-transparent py-3 md:py-6",
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -34,21 +34,21 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-10">
-          {["ABOUT", "SKILLS", "EXPERIENCE", "HOBBIES", "CONTACT"].map((item, index) => (
+          {["ホーム", "プロフィール", "スキル", "職歴", "趣味", "トレンド"].map((item, index) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`#${["hero", "about", "skills", "experience", "hobbies", "contact"][index]}`}
               className="text-sm tracking-wide relative group overflow-hidden"
             >
-              <span className="relative z-10 transition-colors group-hover:text-cyan-400">{item}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="relative z-10 transition-colors group-hover:text-[#0ff]">{item}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0ff] transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-full cyber-card"
+          className="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-full society-card"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <XIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
@@ -57,13 +57,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 cyber-bg">
+        <div className="md:hidden absolute top-full left-0 right-0 society-bg">
           <div className="container mx-auto px-4 py-3 flex flex-col space-y-3">
-            {["ABOUT", "SKILLS", "EXPERIENCE", "HOBBIES", "CONTACT"].map((item) => (
+            {["ホーム", "プロフィール", "スキル", "職歴", "趣味", "トレンド"].map((item, index) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
-                className="py-2 text-sm tracking-wide border-b border-cyan-500/30 last:border-0 hover:text-cyan-400 transition-colors"
+                href={`#${["hero", "about", "skills", "experience", "hobbies", "contact"][index]}`}
+                className="py-2 text-sm tracking-wide border-b border-[#0ff]/30 last:border-0 hover:text-[#0ff] transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}
