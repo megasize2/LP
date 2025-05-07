@@ -4,11 +4,11 @@ import ScrollReveal from "./scroll-reveal"
 export default function ExperienceSection() {
   const experiences = [
     {
-      company: "株式会社tetra Core",
+      company: "株式会社TETRA CORE",
       position: "現在",
       period: "現在",
       description:
-        "株式会社tetra Coreでは、最新のテクノロジーを活用したソリューション開発に携わっています。特に生成AIの活用に力を入れ、革新的なサービス提供を目指しています。",
+        "株式会社TETRA COREでは、最新のテクノロジーを活用したソリューション開発に携わっています。特に生成AIの活用に力を入れ、革新的なサービス提供を目指しています。",
       logo: "/images/tetra-core-logo.png",
     },
     {

@@ -80,8 +80,8 @@ export default function HeroSection() {
                 <div className="circle-dots" style={{ animation: "rotate-dots 20s linear infinite" }}>
                   {Array.from({ length: 12 }).map((_, i) => {
                     const angle = (i * 30 * Math.PI) / 180
-                    const x = 50 + 48 * Math.cos(angle)
-                    const y = 50 + 48 * Math.sin(angle)
+                    const x = 50 + 40 * Math.cos(angle)
+                    const y = 50 + 40 * Math.sin(angle)
                     return (
                       <div
                         key={i}

@@ -48,8 +48,8 @@ export default function ProfilePage() {
 
           // 円周上の位置を計算
           const angle = (i * 30 * Math.PI) / 180
-          const x = 50 + 48 * Math.cos(angle)
-          const y = 50 + 48 * Math.sin(angle)
+          const x = 50 + 40 * Math.cos(angle)
+          const y = 50 + 40 * Math.sin(angle)
 
           dot.style.left = `${x}%`
           dot.style.top = `${y}%`

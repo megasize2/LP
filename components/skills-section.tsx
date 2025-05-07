@@ -59,35 +59,6 @@ export default function SkillsSection() {
             </ScrollReveal>
           ))}
         </div>
-
-        {/* スキルメーター */}
-        <div className="mt-20">
-          <ScrollReveal>
-            <h3 className="text-2xl font-bold text-center mb-10 neon-text">スキルレベル</h3>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              {[
-                { name: "営業力", level: 90, color: "cyan" },
-                { name: "コミュニケーション", level: 85, color: "cyan" },
-                { name: "AI活用", level: 75, color: "cyan" },
-                { name: "問題解決能力", level: 80, color: "cyan" },
-              ].map((skill, i) => (
-                <div key={i} className="society-card p-4">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-300">{skill.name}</span>
-                    <span className="text-[#0ff]">{skill.level}%</span>
-                  </div>
-                  <div className="h-2 bg-[#0a0e2a] rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-[#0ff]/60 to-[#0ff]"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
       </div>
     </section>
   )
