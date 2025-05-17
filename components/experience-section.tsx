@@ -4,11 +4,11 @@ import ScrollReveal from "./scroll-reveal"
 export default function ExperienceSection() {
   const experiences = [
     {
-      company: "株式会社TETRA CORE",
+      company: "株式会社tetra Core",
       position: "現在",
       period: "現在",
       description:
-        "株式会社TETRA COREでは、最新のテクノロジーを活用したソリューション開発に携わっています。特に生成AIの活用に力を入れ、革新的なサービス提供を目指しています。",
+        "株式会社tetra Coreでは、最新のテクノロジーを活用したソリューション開発に携わっています。特に生成AIの活用に力を入れ、革新的なサービス提供を目指しています。",
       logo: "/images/tetra-core-logo.png",
     },
     {
@@ -30,51 +30,72 @@ export default function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-20 society-bg hexagon-pattern relative overflow-hidden">
-      {/* スキャナーライン */}
-      <div className="scanner-line"></div>
+    <section id="experience" className="py-20 bg-white relative overflow-hidden">
+      {/* 装飾線 */}
+      <div className="decorative-line decorative-line-1"></div>
+      <div className="decorative-line decorative-line-2"></div>
+
+      {/* 動く背景ドット */}
+      <div className="animated-dots">
+        {Array.from({ length: 15 }).map((_, i) => (
+          <div
+            key={i}
+            className="dot"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${3 + Math.random() * 5}px`,
+              height: `${3 + Math.random() * 5}px`,
+              animationDuration: `${10 + Math.random() * 20}s`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          ></div>
+        ))}
+      </div>
+
+      {/* 装飾的な円 */}
+      <div className="absolute top-20 right-20 w-36 h-36 border border-[#0088ff]/20 rounded-full rotating"></div>
+      <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-dashed border-[#0088ff]/30 rounded-full rotating-reverse"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal direction="scale">
           <div className="text-center mb-16">
-            <h2 className="english-title text-[#0ff] text-xl mb-2">CAREER JOURNEY</h2>
-            <h1 className="text-4xl md:text-5xl font-bold gold-title">職歴</h1>
+            <h2 className="text-[#0088ff] text-xl mb-2 font-bold">CAREER JOURNEY</h2>
+            <h1 className="text-4xl md:text-5xl font-bold blue-gradient-text" data-text="職歴">
+              職歴
+            </h1>
           </div>
         </ScrollReveal>
 
         <div className="max-w-4xl mx-auto">
           {/* タイムライン */}
-          <div className="relative border-l-2 border-[#0ff]/30 ml-6 md:ml-12 space-y-12">
+          <div className="relative border-l-2 border-[#0088ff]/30 ml-6 md:ml-12 space-y-12">
             {experiences.map((exp, index) => (
               <ScrollReveal key={index} direction="left" delay={index * 100}>
                 <div className="relative pl-8 md:pl-12">
                   {/* タイムラインノード */}
-                  <div className="absolute -left-4 w-8 h-8 rounded-full bg-[#0ff]/30 border-2 border-[#0ff] flex items-center justify-center">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="absolute -left-4 w-8 h-8 rounded-full bg-[#0088ff]/30 border-2 border-[#0088ff] flex items-center justify-center glow">
+                    <div className="w-2 h-2 bg-[#0088ff] rounded-full pulse"></div>
                   </div>
 
-                  <div className="society-card p-6">
+                  <div className="modern-card p-6 hover:scale-105 transition-all duration-300">
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="md:w-2/3">
                         <div className="flex items-center mb-4">
                           {index === 0 ? (
-                            <BuildingIcon className="w-5 h-5 mr-2 text-[#0ff]" />
+                            <BuildingIcon className="w-5 h-5 mr-2 text-[#0088ff]" />
                           ) : (
-                            <BriefcaseIcon className="w-5 h-5 mr-2 text-[#0ff]" />
+                            <BriefcaseIcon className="w-5 h-5 mr-2 text-[#0088ff]" />
                           )}
-                          <h3 className="text-xl font-bold neon-text">{exp.company}</h3>
+                          <h3 className="text-xl font-bold blue-text">{exp.company}</h3>
                         </div>
 
-                        <p className="text-[#0ff] mb-4">{exp.period}</p>
-                        <p className="text-gray-300 mb-4">{exp.description}</p>
-
-                        {/* 装飾的なコーナー */}
-                        <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#0ff]"></div>
-                        <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#0ff]"></div>
+                        <p className="text-[#0088ff] mb-4">{exp.period}</p>
+                        <p className="text-gray-700 mb-4">{exp.description}</p>
                       </div>
 
                       <div className="md:w-1/3">
-                        <div className="society-card p-2 h-full flex items-center justify-center">
+                        <div className="modern-card p-2 h-full flex items-center justify-center">
                           {exp.logo ? (
                             <img
                               src={exp.logo || "/placeholder.svg"}

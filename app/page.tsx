@@ -13,78 +13,44 @@ import SideNavigation from "@/components/side-navigation"
 import MobileNavigation from "@/components/mobile-navigation"
 
 export default function ProfilePage() {
-  // パーティクル効果の初期化
+  // アニメーション効果の初期化
   useEffect(() => {
-    // パーティクルの生成
-    const createParticles = () => {
-      const particles = document.querySelectorAll(".particles")
-
-      particles.forEach((container) => {
-        for (let i = 0; i < 30; i++) {
-          const particle = document.createElement("div")
-          particle.classList.add("particle")
-
-          // ランダムな位置と遅延を設定
-          particle.style.left = `${Math.random() * 100}%`
-          particle.style.top = `${Math.random() * 100}%`
-          particle.style.animationDuration = `${15 + Math.random() * 10}s`
-          particle.style.animationDelay = `${Math.random() * 5}s`
-
-          container.appendChild(particle)
-        }
-      })
-    }
-
-    createParticles()
-
-    // 円周上のドットの生成
-    const createCircleDots = () => {
-      const circleDots = document.querySelectorAll(".circle-dots")
-
-      circleDots.forEach((container) => {
-        for (let i = 0; i < 12; i++) {
-          const dot = document.createElement("div")
-          dot.classList.add("circle-dot")
-
-          // 円周上の位置を計算
-          const angle = (i * 30 * Math.PI) / 180
-          const x = 50 + 40 * Math.cos(angle)
-          const y = 50 + 40 * Math.sin(angle)
-
-          dot.style.left = `${x}%`
-          dot.style.top = `${y}%`
-          dot.style.animationDelay = `${i * 0.2}s`
-
-          container.appendChild(dot)
-        }
-      })
-    }
-
-    createCircleDots()
-
-    // スクロールアニメーションの初期化
+    // フェードインアニメーションの初期化
     const handleScroll = () => {
-      const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale")
+      const fadeElements = document.querySelectorAll(".fade-in")
+      const modernCards = document.querySelectorAll(".modern-card")
 
-      reveals.forEach((reveal) => {
-        const windowHeight = window.innerHeight
-        const revealTop = reveal.getBoundingClientRect().top
-        const revealPoint = 150
+      fadeElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top
+        const elementVisible = 150
 
-        if (revealTop < windowHeight - revealPoint) {
-          reveal.classList.add("active")
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add("active")
+        }
+      })
+
+      modernCards.forEach((card) => {
+        const cardTop = card.getBoundingClientRect().top
+        const cardVisible = 150
+
+        if (cardTop < window.innerHeight - cardVisible) {
+          card.classList.add("active")
         }
       })
     }
 
     window.addEventListener("scroll", handleScroll)
+    window.addEventListener("load", handleScroll)
     handleScroll() // 初期表示時にも実行
 
-    return () => window.removeEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("load", handleScroll)
+    }
   }, [])
 
   return (
-    <div className="min-h-screen society-bg text-white pb-24 md:pb-0">
+    <div className="min-h-screen bg-white text-gray-800 pb-24 md:pb-0">
       <Navbar />
       <SideNavigation />
       <MobileNavigation />

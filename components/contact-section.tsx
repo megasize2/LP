@@ -21,34 +21,59 @@ export default function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-20 society-bg network-grid relative overflow-hidden">
-      {/* スキャナーライン */}
-      <div className="scanner-line"></div>
+    <section id="contact" className="py-20 bg-white relative overflow-hidden">
+      {/* 装飾線 */}
+      <div className="decorative-line decorative-line-1"></div>
+      <div className="decorative-line decorative-line-2"></div>
+
+      {/* 動く背景ドット */}
+      <div className="animated-dots">
+        {Array.from({ length: 15 }).map((_, i) => (
+          <div
+            key={i}
+            className="dot"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${3 + Math.random() * 5}px`,
+              height: `${3 + Math.random() * 5}px`,
+              animationDuration: `${10 + Math.random() * 20}s`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          ></div>
+        ))}
+      </div>
+
+      {/* 装飾的な円 */}
+      <div className="absolute top-40 left-10 w-40 h-40 border border-[#0088ff]/20 rounded-full rotating"></div>
+      <div className="absolute bottom-40 right-10 w-28 h-28 border-2 border-dashed border-[#0088ff]/30 rounded-full rotating-reverse"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal direction="scale">
           <div className="text-center mb-16">
-            <h2 className="english-title text-[#0ff] text-xl mb-2">CURRENT INTERESTS</h2>
-            <h1 className="text-4xl md:text-5xl font-bold gold-title">トレンド</h1>
+            <h2 className="text-[#0088ff] text-xl mb-2 font-bold">CURRENT INTERESTS</h2>
+            <h1 className="text-4xl md:text-5xl font-bold blue-gradient-text" data-text="トレンド">
+              トレンド
+            </h1>
           </div>
         </ScrollReveal>
 
-        <div className="max-w-5xl mx-auto society-card p-8">
+        <div className="max-w-5xl mx-auto modern-card p-8 hover:scale-105 transition-all duration-500">
           <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
             <div className="md:w-1/4 flex justify-center">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#0ff]/30 to-[#0ff]/10 flex items-center justify-center border border-[#0ff]/50 shadow-lg">
-                <BrainCircuitIcon className="w-12 h-12 text-[#0ff]" />
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#0088ff]/30 to-[#00ccff]/10 flex items-center justify-center border border-[#0088ff]/50 shadow-lg floating glow">
+                <BrainCircuitIcon className="w-12 h-12 text-[#0088ff]" />
               </div>
             </div>
 
             <div className="md:w-3/4">
-              <h3 className="text-2xl font-bold mb-4 neon-text text-center md:text-left">生成AI</h3>
-              <p className="text-gray-300 mb-6 text-center md:text-left">
+              <h3 className="text-2xl font-bold mb-4 blue-text text-center md:text-left">生成AI</h3>
+              <p className="text-gray-700 mb-6 text-center md:text-left">
                 最近のトレンドは生成AIです。情報を得るのが大変で常に頭を動かしています。最新技術の動向に敏感で、特に生成AIの可能性と活用方法に強い関心を持っています。
               </p>
 
-              <div className="society-card p-6 mb-6 border-[#0ff]/30">
-                <p className="text-gray-300 italic">
+              <div className="modern-card p-6 mb-6 border-[#0088ff]/30">
+                <p className="text-gray-700 italic">
                   "今年生成AI関連に支払ったサブスク合計が5万円を突破。流石に懐事情でChatGPT
                   Proは契約できておらず毎月給料日に迷っています。"
                 </p>
@@ -58,7 +83,7 @@ export default function ContactSection() {
                 {["生成AI", "テクノロジー", "イノベーション", "自己啓発"].map((tag, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-gradient-to-r from-[#0ff]/20 to-[#0ff]/10 text-white rounded-full text-sm border border-[#0ff]/30"
+                    className="px-3 py-1 bg-gradient-to-r from-[#0088ff]/20 to-[#00ccff]/10 text-[#0088ff] rounded-full text-sm border border-[#0088ff]/30 hover:bg-[#0088ff]/20 transition-colors"
                   >
                     {tag}
                   </span>
@@ -68,74 +93,74 @@ export default function ContactSection() {
           </div>
 
           <div className="mt-12">
-            <h4 className="text-xl font-bold mb-6 pb-2 border-b border-[#0ff]/30 neon-text text-center md:text-left">
+            <h4 className="text-xl font-bold mb-6 pb-2 border-b border-[#0088ff]/30 blue-text text-center md:text-left">
               実際使用したAIのオススメ+使用熟練度
             </h4>
-            <p className="text-gray-300 mb-6 text-center md:text-left">
+            <p className="text-gray-700 mb-6 text-center md:text-left">
               ★が多いほどオススメかつ私自身の使用練度が高い意味を示しています。
             </p>
 
             <div className="mb-10">
-              <h5 className="text-lg font-bold mb-4 bg-gradient-to-r from-[#0ff]/20 to-[#0ff]/10 p-2 rounded-lg border-l-2 border-[#0ff] text-center md:text-left">
+              <h5 className="text-lg font-bold mb-4 bg-gradient-to-r from-[#0088ff]/20 to-[#00ccff]/10 p-2 rounded-lg border-l-2 border-[#0088ff] text-center md:text-left">
                 仕事使用可能
               </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {workAiTools.map((tool, index) => (
                   <div
                     key={index}
-                    className="society-card p-4 border-[#0ff]/30 hover:border-[#0ff]/60 transition-all duration-300"
+                    className="modern-card p-4 border-[#0088ff]/30 hover:border-[#0088ff]/60 transition-all duration-300"
                   >
                     <div className="flex justify-between items-start">
                       <a
                         href={tool.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-[#0ff] hover:text-white"
+                        className="font-medium text-[#0088ff] hover:text-[#00ccff]"
                       >
                         {tool.name}
                       </a>
                       <div className="flex">
                         {Array.from({ length: 5 }).map((_, i) => (
-                          <span key={i} className={i < tool.rating ? "text-yellow-400" : "text-gray-600"}>
+                          <span key={i} className={i < tool.rating ? "text-yellow-400" : "text-gray-300"}>
                             ★
                           </span>
                         ))}
                       </div>
                     </div>
-                    <p className="text-gray-300 mt-1">{tool.description}</p>
+                    <p className="text-gray-700 mt-1">{tool.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div>
-              <h5 className="text-lg font-bold mb-4 bg-gradient-to-r from-[#0ff]/20 to-[#0ff]/10 p-2 rounded-lg border-l-2 border-[#0ff] text-center md:text-left">
+              <h5 className="text-lg font-bold mb-4 bg-gradient-to-r from-[#0088ff]/20 to-[#00ccff]/10 p-2 rounded-lg border-l-2 border-[#0088ff] text-center md:text-left">
                 個人的趣味で使用可能
               </h5>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {personalAiTools.map((tool, index) => (
                   <div
                     key={index}
-                    className="society-card p-4 border-[#0ff]/30 hover:border-[#0ff]/60 transition-all duration-300"
+                    className="modern-card p-4 border-[#0088ff]/30 hover:border-[#0088ff]/60 transition-all duration-300"
                   >
                     <div className="flex justify-between items-start">
                       <a
                         href={tool.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium text-[#0ff] hover:text-white"
+                        className="font-medium text-[#0088ff] hover:text-[#00ccff]"
                       >
                         {tool.name}
                       </a>
                       <div className="flex">
                         {Array.from({ length: 5 }).map((_, i) => (
-                          <span key={i} className={i < tool.rating ? "text-yellow-400" : "text-gray-600"}>
+                          <span key={i} className={i < tool.rating ? "text-yellow-400" : "text-gray-300"}>
                             ★
                           </span>
                         ))}
                       </div>
                     </div>
-                    <p className="text-gray-300 mt-1">{tool.description}</p>
+                    <p className="text-gray-700 mt-1">{tool.description}</p>
                   </div>
                 ))}
               </div>

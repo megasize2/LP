@@ -20,7 +20,7 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "society-bg py-2" : "bg-transparent py-3 md:py-6",
+        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-3 md:py-6",
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -38,17 +38,17 @@ export default function Navbar() {
             <a
               key={item}
               href={`#${["hero", "about", "skills", "experience", "hobbies", "contact"][index]}`}
-              className="text-sm tracking-wide relative group overflow-hidden"
+              className="text-sm tracking-wide relative group overflow-hidden text-gray-700"
             >
-              <span className="relative z-10 transition-colors group-hover:text-[#0ff]">{item}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0ff] transition-all duration-300 group-hover:w-full"></span>
+              <span className="relative z-10 transition-colors group-hover:text-[#0066ff]">{item}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0066ff] transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-full society-card"
+          className="md:hidden text-[#0066ff] w-10 h-10 flex items-center justify-center rounded-full modern-card"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <XIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
@@ -57,13 +57,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 society-bg">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-md">
           <div className="container mx-auto px-4 py-3 flex flex-col space-y-3">
             {["ホーム", "プロフィール", "スキル", "職歴", "趣味", "トレンド"].map((item, index) => (
               <a
                 key={item}
                 href={`#${["hero", "about", "skills", "experience", "hobbies", "contact"][index]}`}
-                className="py-2 text-sm tracking-wide border-b border-[#0ff]/30 last:border-0 hover:text-[#0ff] transition-colors"
+                className="py-2 text-sm tracking-wide border-b border-[#0066ff]/30 last:border-0 hover:text-[#0066ff] transition-colors text-gray-700"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}

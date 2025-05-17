@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useRef } from "react"
 
 interface ScrollRevealProps {
@@ -52,19 +51,19 @@ export default function ScrollReveal({
   const getRevealClass = () => {
     switch (direction) {
       case "left":
-        return "reveal-left"
+        return "fade-in translate-x-[-30px]"
       case "right":
-        return "reveal-right"
+        return "fade-in translate-x-[30px]"
       case "scale":
-        return "reveal-scale"
+        return "fade-in scale-95"
       case "flip":
-        return "reveal-flip"
+        return "fade-in [transform:rotateY(20deg)]"
       case "rotate":
-        return "reveal-rotate"
+        return "fade-in [transform:rotate(5deg)]"
       case "zoom":
-        return "reveal-zoom"
+        return "fade-in scale-90"
       default:
-        return "reveal"
+        return "fade-in"
     }
   }
 
