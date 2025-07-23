@@ -25,11 +25,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center">
-          <img
-            src="/images/company-logo.png"
-            alt="TETRA CORE"
-            className="h-8 md:h-10 object-contain bg-white p-1 rounded"
-          />
+          <h2 className="text-xl font-bold tracking-wider blue-text">KUNIYOSHI</h2>
         </a>
 
         {/* Desktop Navigation */}
@@ -40,15 +36,15 @@ export default function Navbar() {
               href={`#${["hero", "about", "skills", "experience", "hobbies", "contact"][index]}`}
               className="text-sm tracking-wide relative group overflow-hidden text-gray-700"
             >
-              <span className="relative z-10 transition-colors group-hover:text-[#0066ff]">{item}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0066ff] transition-all duration-300 group-hover:w-full"></span>
+              <span className="relative z-10 transition-colors group-hover:text-[#0088ff]">{item}</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#0088ff] transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-[#0066ff] w-10 h-10 flex items-center justify-center rounded-full modern-card"
+          className="md:hidden text-[#0088ff] w-10 h-10 flex items-center justify-center rounded-full modern-card"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <XIcon className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
@@ -63,7 +59,7 @@ export default function Navbar() {
               <a
                 key={item}
                 href={`#${["hero", "about", "skills", "experience", "hobbies", "contact"][index]}`}
-                className="py-2 text-sm tracking-wide border-b border-[#0066ff]/30 last:border-0 hover:text-[#0066ff] transition-colors text-gray-700"
+                className="py-2 text-sm tracking-wide border-b border-[#0088ff]/30 last:border-0 hover:text-[#0088ff] transition-colors text-gray-700"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}

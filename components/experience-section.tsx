@@ -1,16 +1,8 @@
-import { BriefcaseIcon, BuildingIcon } from "lucide-react"
+import { BriefcaseIcon } from "lucide-react"
 import ScrollReveal from "./scroll-reveal"
 
 export default function ExperienceSection() {
   const experiences = [
-    {
-      company: "株式会社tetra Core",
-      position: "現在",
-      period: "現在",
-      description:
-        "株式会社tetra Coreでは、最新のテクノロジーを活用したソリューション開発に携わっています。特に生成AIの活用に力を入れ、革新的なサービス提供を目指しています。",
-      logo: "/images/tetra-core-logo.png",
-    },
     {
       company: "オフィス機器販売営業",
       position: "営業担当",
@@ -82,11 +74,7 @@ export default function ExperienceSection() {
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="md:w-2/3">
                         <div className="flex items-center mb-4">
-                          {index === 0 ? (
-                            <BuildingIcon className="w-5 h-5 mr-2 text-[#0088ff]" />
-                          ) : (
-                            <BriefcaseIcon className="w-5 h-5 mr-2 text-[#0088ff]" />
-                          )}
+                          <BriefcaseIcon className="w-5 h-5 mr-2 text-[#0088ff]" />
                           <h3 className="text-xl font-bold blue-text">{exp.company}</h3>
                         </div>
 
@@ -96,19 +84,11 @@ export default function ExperienceSection() {
 
                       <div className="md:w-1/3">
                         <div className="modern-card p-2 h-full flex items-center justify-center">
-                          {exp.logo ? (
-                            <img
-                              src={exp.logo || "/placeholder.svg"}
-                              alt={exp.company}
-                              className="h-16 object-contain"
-                            />
-                          ) : (
-                            <img
-                              src={exp.image || "/placeholder.svg"}
-                              alt={exp.company}
-                              className="w-full h-32 object-cover"
-                            />
-                          )}
+                          <img
+                            src={exp.image || "/placeholder.svg"}
+                            alt={exp.company}
+                            className="w-full h-32 object-cover"
+                          />
                         </div>
                       </div>
                     </div>

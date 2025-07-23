@@ -30,17 +30,10 @@ export default function Footer() {
       <div className="absolute bottom-10 left-10 w-16 h-16 border-2 border-dashed border-[#0088ff]/30 rounded-full rotating-reverse"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <ScrollReveal direction="left" className="mb-6 md:mb-0">
+        <div className="flex flex-col items-center">
+          <ScrollReveal direction="up" className="text-center">
             <h2 className="text-xl font-bold tracking-wider blue-text">KUNIYOSHI</h2>
             <p className="text-gray-700 mt-2">國吉泰史のプロフィールサイト</p>
-          </ScrollReveal>
-
-          <ScrollReveal direction="right" className="flex items-center mb-6 md:mb-0">
-            <div className="p-1 rounded-lg mr-3 relative modern-card">
-              <img src="/images/company-logo.png" alt="TETRA CORE" className="h-8 bg-white p-1 rounded" />
-            </div>
-            <span className="text-gray-700">株式会社tetra Core</span>
           </ScrollReveal>
         </div>
 
