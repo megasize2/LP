@@ -1,4 +1,4 @@
-import { BriefcaseIcon } from "lucide-react"
+import { BriefcaseIcon, CalendarIcon } from "lucide-react"
 import ScrollReveal from "./scroll-reveal"
 
 export default function ExperienceSection() {
@@ -10,6 +10,7 @@ export default function ExperienceSection() {
       description:
         "法人向けオフィス機器の販売営業として9年間勤務。クライアントのニーズを理解し、最適なソリューションを提案することで、長期的な信頼関係を構築。",
       image: "/images/work/office-equipment.jpg",
+      color: "from-blue-500 to-cyan-500",
     },
     {
       company: "家電量販店 販売営業",
@@ -18,72 +19,62 @@ export default function ExperienceSection() {
       description:
         "家電量販店で個人顧客向け（BtoC）の販売営業として3年間勤務。多様な顧客ニーズに対応し、適切な商品提案と丁寧な説明を心がけました。",
       image: "/images/work/electronics-retail.jpg",
+      color: "from-green-500 to-emerald-500",
     },
   ]
 
   return (
-    <section id="experience" className="py-20 bg-white relative overflow-hidden">
-      {/* 装飾線 */}
-      <div className="decorative-line decorative-line-1"></div>
-      <div className="decorative-line decorative-line-2"></div>
-
-      {/* 動く背景ドット */}
-      <div className="animated-dots">
-        {Array.from({ length: 15 }).map((_, i) => (
-          <div
-            key={i}
-            className="dot"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${3 + Math.random() * 5}px`,
-              height: `${3 + Math.random() * 5}px`,
-              animationDuration: `${10 + Math.random() * 20}s`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
-          ></div>
-        ))}
+    <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 to-slate-100 relative overflow-hidden">
+      {/* 背景装飾 */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl" />
       </div>
-
-      {/* 装飾的な円 */}
-      <div className="absolute top-20 right-20 w-36 h-36 border border-[#0088ff]/20 rounded-full rotating"></div>
-      <div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-dashed border-[#0088ff]/30 rounded-full rotating-reverse"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal direction="scale">
           <div className="text-center mb-16">
-            <h2 className="text-[#0088ff] text-xl mb-2 font-bold">CAREER JOURNEY</h2>
-            <h1 className="text-4xl md:text-5xl font-bold blue-gradient-text" data-text="職歴">
-              職歴
-            </h1>
+            <span className="inline-block px-6 py-2 bg-green-50 text-green-600 rounded-full text-sm font-medium tracking-wider uppercase mb-4">
+              Career Journey
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">職歴</h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto" />
           </div>
         </ScrollReveal>
 
         <div className="max-w-4xl mx-auto">
           {/* タイムライン */}
-          <div className="relative border-l-2 border-[#0088ff]/30 ml-6 md:ml-12 space-y-12">
-            {experiences.map((exp, index) => (
-              <ScrollReveal key={index} direction="left" delay={index * 100}>
-                <div className="relative pl-8 md:pl-12">
-                  {/* タイムラインノード */}
-                  <div className="absolute -left-4 w-8 h-8 rounded-full bg-[#0088ff]/30 border-2 border-[#0088ff] flex items-center justify-center glow">
-                    <div className="w-2 h-2 bg-[#0088ff] rounded-full pulse"></div>
-                  </div>
+          <div className="relative">
+            {/* 中央線 */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-500 to-emerald-500 rounded-full" />
 
-                  <div className="modern-card p-6 hover:scale-105 transition-all duration-300">
-                    <div className="flex flex-col md:flex-row gap-6">
-                      <div className="md:w-2/3">
+            <div className="space-y-16">
+              {experiences.map((exp, index) => (
+                <ScrollReveal key={index} direction={index % 2 === 0 ? "left" : "right"} delay={index * 200}>
+                  <div className={`flex items-center ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+                    {/* コンテンツ */}
+                    <div className="w-5/12">
+                      <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500">
                         <div className="flex items-center mb-4">
-                          <BriefcaseIcon className="w-5 h-5 mr-2 text-[#0088ff]" />
-                          <h3 className="text-xl font-bold blue-text">{exp.company}</h3>
+                          <div
+                            className={`w-12 h-12 rounded-xl bg-gradient-to-r ${exp.color} flex items-center justify-center mr-4 text-white shadow-lg`}
+                          >
+                            <BriefcaseIcon className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900">{exp.company}</h3>
+                            <p className="text-gray-600">{exp.position}</p>
+                          </div>
                         </div>
 
-                        <p className="text-[#0088ff] mb-4">{exp.period}</p>
-                        <p className="text-gray-700 mb-3 leading-relaxed">{exp.description}</p>
-                      </div>
+                        <div className="flex items-center mb-4 text-gray-500">
+                          <CalendarIcon className="w-4 h-4 mr-2" />
+                          <span>{exp.period}</span>
+                        </div>
 
-                      <div className="md:w-1/3">
-                        <div className="modern-card p-2 h-full flex items-center justify-center">
+                        <p className="text-gray-700 leading-relaxed mb-6">{exp.description}</p>
+
+                        <div className="rounded-2xl overflow-hidden">
                           <img
                             src={exp.image || "/placeholder.svg"}
                             alt={exp.company}
@@ -92,10 +83,20 @@ export default function ExperienceSection() {
                         </div>
                       </div>
                     </div>
+
+                    {/* 中央のノード */}
+                    <div className="w-2/12 flex justify-center">
+                      <div
+                        className={`w-8 h-8 rounded-full bg-gradient-to-r ${exp.color} border-4 border-white shadow-lg z-10`}
+                      />
+                    </div>
+
+                    {/* 空のスペース */}
+                    <div className="w-5/12" />
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </div>
       </div>

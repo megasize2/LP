@@ -54,44 +54,47 @@ export default function HobbiesSection() {
   ]
 
   return (
-    <section id="hobbies" className="py-20 bg-white relative overflow-hidden">
-      {/* 装飾線 */}
-      <div className="decorative-line decorative-line-1"></div>
-      <div className="decorative-line decorative-line-2"></div>
+    <section id="hobbies" className="py-16 sm:py-20 bg-white relative overflow-hidden">
+      {/* 装飾線 - モバイルでは非表示 */}
+      <div className="decorative-line decorative-line-1 hidden md:block"></div>
+      <div className="decorative-line decorative-line-2 hidden md:block"></div>
 
-      {/* 動く背景ドット */}
+      {/* 動く背景ドット - 固定数に変更 */}
       <div className="animated-dots">
-        {Array.from({ length: 15 }).map((_, i) => (
+        {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
-            className="dot"
+            className="dot hidden sm:block"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              width: `${3 + Math.random() * 5}px`,
-              height: `${3 + Math.random() * 5}px`,
-              animationDuration: `${10 + Math.random() * 20}s`,
+              width: `${3 + Math.random() * 3}px`,
+              height: `${3 + Math.random() * 3}px`,
+              animationDuration: `${15 + Math.random() * 15}s`,
               animationDelay: `${Math.random() * 5}s`,
             }}
           ></div>
         ))}
       </div>
 
-      {/* 装飾的な円 */}
-      <div className="absolute top-40 right-10 w-40 h-40 border border-[#0088ff]/20 rounded-full rotating"></div>
-      <div className="absolute bottom-40 left-10 w-28 h-28 border-2 border-dashed border-[#0088ff]/30 rounded-full rotating-reverse"></div>
+      {/* 装飾的な円 - モバイルでは非表示 */}
+      <div className="absolute top-40 right-10 w-40 h-40 border border-[#0088ff]/20 rounded-full rotating hidden md:block"></div>
+      <div className="absolute bottom-40 left-10 w-28 h-28 border-2 border-dashed border-[#0088ff]/30 rounded-full rotating-reverse hidden md:block"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal direction="scale">
-          <div className="text-center mb-16">
-            <h2 className="text-[#0088ff] text-xl mb-2 font-bold">HOBBIES & INTERESTS</h2>
-            <h1 className="text-4xl md:text-5xl font-bold blue-gradient-text" data-text="趣味">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-blue-600 text-lg sm:text-xl mb-3 font-bold">HOBBIES & INTERESTS</h2>
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl font-bold blue-gradient-text leading-tight"
+              data-text="趣味"
+            >
               趣味
             </h1>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {hobbies.map((hobby, index) => (
             <ScrollReveal key={index} direction="scale" delay={index * 50}>
               <div className="modern-card p-0 h-80 group hover:scale-105 transition-all duration-300">
@@ -113,7 +116,7 @@ export default function HobbiesSection() {
 
                   <div>
                     <h3 className="text-2xl font-bold mb-3 blue-text">{hobby.name}</h3>
-                    <p className="text-gray-700 mb-3 leading-relaxed">{hobby.description}</p>
+                    <p className="text-gray-700 mb-3 leading-relaxed text-sm sm:text-base">{hobby.description}</p>
 
                     <button className="text-[#0088ff] text-sm flex items-center gap-2 group-hover:underline">
                       詳細を見る
