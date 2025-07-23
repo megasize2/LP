@@ -79,7 +79,7 @@ export default function ExperienceSection() {
                         </div>
 
                         <p className="text-[#0088ff] mb-4">{exp.period}</p>
-                        <p className="text-gray-700 mb-4">{exp.description}</p>
+                        <p className="text-gray-700 mb-3 leading-relaxed">{exp.description}</p>
                       </div>
 
                       <div className="md:w-1/3">

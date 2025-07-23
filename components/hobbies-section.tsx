@@ -113,7 +113,7 @@ export default function HobbiesSection() {
 
                   <div>
                     <h3 className="text-2xl font-bold mb-3 blue-text">{hobby.name}</h3>
-                    <p className="text-gray-700 mb-4">{hobby.description}</p>
+                    <p className="text-gray-700 mb-3 leading-relaxed">{hobby.description}</p>
 
                     <button className="text-[#0088ff] text-sm flex items-center gap-2 group-hover:underline">
                       詳細を見る

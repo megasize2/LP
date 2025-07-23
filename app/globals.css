@@ -518,6 +518,27 @@
     }
   }
 
+  /* 段落スペーシング調整 */
+  .text-spacing-tight p + p {
+    margin-top: 0.25rem;
+  }
+
+  .text-spacing-normal p + p {
+    margin-top: 0.5rem;
+  }
+
+  .text-spacing-relaxed p + p {
+    margin-top: 0.75rem;
+  }
+
+  .leading-relaxed {
+    line-height: 1.7;
+  }
+
+  .leading-loose {
+    line-height: 1.8;
+  }
+
   /* レスポンシブ調整 */
   @media (max-width: 768px) {
     .modern-card {

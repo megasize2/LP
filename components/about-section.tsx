@@ -45,7 +45,7 @@ export default function AboutSection() {
             <ScrollReveal direction="left">
               <div className="modern-card p-6 h-full hover:scale-105 transition-all duration-300">
                 <h3 className="text-xl font-bold mb-4 blue-text">基本情報</h3>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   <li className="flex items-start">
                     <CalendarIcon className="w-5 h-5 mr-3 text-[#0088ff] mt-1" />
                     <div>
@@ -74,8 +74,8 @@ export default function AboutSection() {
                   <p className="text-xs text-[#0088ff] mt-1">福岡県北九州市八幡西区折尾</p>
 
                   <div className="mt-4 pt-4 border-t border-[#0088ff]/30">
-                    <p className="font-medium">学生時代の活動</p>
-                    <p className="text-gray-700 mt-1">野球部</p>
+                    <p className="font-medium mb-2">学生時代の活動</p>
+                    <p className="text-gray-700">野球部</p>
                   </div>
                 </div>
               </div>

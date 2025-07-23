@@ -42,8 +42,8 @@ export default function HeroSection() {
               </div>
 
               <div className="text-lg md:text-xl mb-8 text-gray-600">
-                <p>つくるものを通して人とのつながり</p>
-                <p>新しい価値が生まれ、気持ちや想いが届く。</p>
+                <p className="mb-1">つくるものを通して人とのつながり</p>
+                <p className="mb-1">新しい価値が生まれ、気持ちや想いが届く。</p>
                 <p>そんなお手伝いができればと考えています。</p>
               </div>
 

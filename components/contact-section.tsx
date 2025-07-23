@@ -68,14 +68,13 @@ export default function ContactSection() {
 
             <div className="md:w-3/4">
               <h3 className="text-2xl font-bold mb-4 blue-text text-center md:text-left">生成AI</h3>
-              <p className="text-gray-700 mb-6 text-center md:text-left">
-                最近のトレンドは生成AIです。情報を得るのが大変で常に頭を動かしています。最新技術の動向に敏感で、特に生成AIの可能性と活用方法に強い関心を持っています。
-              </p>
+              <div className="text-gray-700 mb-6 text-center md:text-left space-y-2">
+                <p>最近のトレンドは生成AIです。情報を得るのが大変で常に頭を動かしています。</p>
+                <p>最新技術の動向に敏感で、特に生成AIの可能性と活用方法に強い関心を持っています。</p>
+              </div>
 
               <div className="modern-card p-6 mb-6 border-[#0088ff]/30">
-                <p className="text-gray-700 italic">
-                  "今年生成AI関連に支払ったサブスク合計が10万円を突破。
-                </p>
+                <p className="text-gray-700 italic">"今年生成AI関連に支払ったサブスク合計が10万円を突破。</p>
               </div>
 
               <div className="flex flex-wrap gap-3 justify-center md:justify-start">
@@ -95,7 +94,7 @@ export default function ContactSection() {
             <h4 className="text-xl font-bold mb-6 pb-2 border-b border-[#0088ff]/30 blue-text text-center md:text-left">
               実際使用したAIのオススメ+使用熟練度
             </h4>
-            <p className="text-gray-700 mb-6 text-center md:text-left">
+            <p className="text-gray-700 mb-4 text-center md:text-left">
               ★が多いほどオススメかつ私自身の使用練度が高い意味を示しています。
             </p>
 
