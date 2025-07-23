@@ -80,9 +80,9 @@ export default function HeroSection() {
 
             {/* 説明文 */}
             <div className="text-lg sm:text-xl md:text-2xl text-white/90 mb-12 space-y-3 font-light leading-relaxed">
-              <p>つくるものを通して人とのつながり</p>
+              <p>出会いを通じて人とのつながり</p>
               <p>新しい価値が生まれ、気持ちや想いが届く。</p>
-              <p>そんなお手伝いができればと考えています。</p>
+              <p>そんなお仕事ができればと考えています。</p>
             </div>
 
             {/* CTA ボタン */}
