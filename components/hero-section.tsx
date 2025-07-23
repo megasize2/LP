@@ -41,13 +41,11 @@ export default function HeroSection() {
                 <h2 className="text-xl md:text-2xl mb-8 text-gray-700">YASUFUMI KUNIYOSHI</h2>
               </div>
 
-              <p className="text-lg md:text-xl mb-8 text-gray-600">
-                つくるものを通して人とのつながり
-                <br />
-                新しい価値が生まれ、気持ちや想いが届く。
-                <br />
-                そんなお手伝いができればと考えています。
-              </p>
+              <div className="text-lg md:text-xl mb-8 text-gray-600">
+                <p>つくるものを通して人とのつながり</p>
+                <p>新しい価値が生まれ、気持ちや想いが届く。</p>
+                <p>そんなお手伝いができればと考えています。</p>
+              </div>
 
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a href="#about" className="modern-button pulse-button">

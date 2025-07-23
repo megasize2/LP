@@ -173,7 +173,7 @@ export default function CubeNetwork() {
         if (cube.position.y < -cube.size * 2) cube.position.y = canvas.height + cube.size * 2
         if (cube.position.y > canvas.height + cube.size * 2) cube.position.y = -cube.size * 2
 
-        // 立方体の頂点を2Dに投影
+        // 立��体の頂点を2Dに投影
         const projectedPoints = cube.points.map((point) => project(point, cube))
 
         // 辺を描画

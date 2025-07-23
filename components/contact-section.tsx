@@ -74,8 +74,7 @@ export default function ContactSection() {
 
               <div className="modern-card p-6 mb-6 border-[#0088ff]/30">
                 <p className="text-gray-700 italic">
-                  "今年生成AI関連に支払ったサブスク合計が5万円を突破。流石に懐事情でChatGPT
-                  Proは契約できておらず毎月給料日に迷っています。"
+                  "今年生成AI関連に支払ったサブスク合計が10万円を突破。
                 </p>
               </div>
 
