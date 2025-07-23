@@ -41,17 +41,17 @@ export default function MobileNavigation() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-      <div className="bg-white border-t border-[#0066ff]/50 shadow-lg">
+      <div className="bg-white/95 backdrop-blur-sm border-t border-[#0066ff]/50 shadow-lg">
         <div className="relative">
           {/* グラデーションライン */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#0066ff] to-[#00ccff] background-size-200"></div>
 
-          <div className="flex justify-around items-center py-3">
+          <div className="flex justify-around items-center py-2 px-2">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`flex flex-col items-center justify-center px-2 py-1 relative ${
+                className={`flex flex-col items-center justify-center px-2 py-2 relative min-w-0 flex-1 ${
                   activeSection === item.id ? "text-[#0066ff]" : "text-gray-400 hover:text-[#0066ff]"
                 }`}
               >
@@ -69,7 +69,7 @@ export default function MobileNavigation() {
                     <span className="absolute inset-0 rounded-full bg-[#0066ff]/20 animate-ping"></span>
                   )}
                 </div>
-                <span className="text-xs mt-1 font-medium">{item.label}</span>
+                <span className="text-xs mt-1 font-medium leading-tight text-center truncate w-full">{item.label}</span>
 
                 {/* アクティブインジケーター */}
                 {activeSection === item.id && (
